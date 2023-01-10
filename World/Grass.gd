@@ -1,11 +1,12 @@
 extends Node2D
 
-func create_grass_effect():
-	var grassEfect = load("res://Effects/GrassEffect.tscn").instance()
-	var world = get_tree().current_scene
+const GrassDestroyEffect = preload("res://Effects/GrassDestroyEffect.tscn")
 
-	world.add_child(grassEfect)
-	grassEfect.global_position = global_position
+func create_grass_effect():
+	var grassDestroyEffect = GrassDestroyEffect.instance()
+
+	get_parent().add_child(grassDestroyEffect)
+	grassDestroyEffect.global_position = global_position
 
 func _on_HurtBox_area_entered(_area):
 	create_grass_effect()

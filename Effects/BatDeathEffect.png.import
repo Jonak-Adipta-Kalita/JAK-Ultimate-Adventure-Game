@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/GrassEffect.png-e13c4c94a67cb5ef9b389379ed46bf17.stex"
+path="res://.import/BatDeathEffect.png-9cf9345c9ce2b3c99656e07931174f0f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Effects/GrassEffect.png"
-dest_files=[ "res://.import/GrassEffect.png-e13c4c94a67cb5ef9b389379ed46bf17.stex" ]
+source_file="res://Effects/BatDeathEffect.png"
+dest_files=[ "res://.import/BatDeathEffect.png-9cf9345c9ce2b3c99656e07931174f0f.stex" ]
 
 [params]
 
