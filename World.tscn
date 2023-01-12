@@ -580,3 +580,7 @@ position = Vector2( 272, -8 )
 
 [node name="Grass15" parent="YSort/Grasses" instance=ExtResource( 6 )]
 position = Vector2( 296, -56 )
+
+[node name="Label" type="Label" parent="."]
+margin_right = 40.0
+margin_bottom = 14.0
