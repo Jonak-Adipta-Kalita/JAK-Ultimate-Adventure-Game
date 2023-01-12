@@ -1,13 +1,38 @@
 extends Area2D
 
-export(bool) var show_hit = true
-
 const HitEffect = preload("res://Effects/HitEffect.tscn")
 
-func _on_HurtBox_area_entered(_area):
-	if show_hit:
-		var hitEffect = HitEffect.instance()
-		var main = get_tree().current_scene
+var invincible = false setget set_invinsible
 
-		main.add_child(hitEffect)
-		hitEffect.global_position = global_position
+onready var timer = $Timer
+
+signal invincibility_started
+signal invincibility_ended
+
+func set_invinsible(value: bool):
+	invincible = value
+	
+	if invincible == true:
+		emit_signal("invincibility_started")
+	else:
+		emit_signal("invincibility_ended")
+
+func start_invincibility(duration):
+	self.invincible = true
+	timer.start(duration)
+
+func create_hit_effect():
+	var hitEffect = HitEffect.instance()
+	var main = get_tree().current_scene
+
+	main.add_child(hitEffect)
+	hitEffect.global_position = global_position
+
+func _on_Timer_timeout():
+	self.invincible = false
+
+func _on_HurtBox_invincibility_ended():
+	monitoring = true
+
+func _on_HurtBox_invincibility_started():
+	set_deferred("monitoring", false)
