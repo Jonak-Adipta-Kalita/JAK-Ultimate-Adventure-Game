@@ -6,6 +6,7 @@ onready var introAnimationPlayer = $Intro/AnimationPlayer
 onready var mainWindow = $MainWindow
 
 func _ready():
+	intro.visible = true
 	mainWindow.visible = false
 	
 	introAnimationPlayer.play("FadeIn")
