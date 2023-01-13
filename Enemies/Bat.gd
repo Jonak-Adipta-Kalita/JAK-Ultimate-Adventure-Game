@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-const BatDeathEffect = preload("res://Effects/BatDeathEffect.tscn")
+const EnemyDeathEffect = preload("res://Effects/EnemyDeathEffect.tscn")
 
 export(int) var MAX_SPEED = 50
 export(int) var ACCELERATION = 200
@@ -86,7 +86,7 @@ func _on_HurtBox_area_entered(area):
 func _on_Stats_no_health():
 	queue_free()
 	
-	var batDeathEffect = BatDeathEffect.instance()
-	get_parent().add_child(batDeathEffect)
+	var enemyDeathEffect = EnemyDeathEffect.instance()
+	get_parent().add_child(enemyDeathEffect)
 	
-	batDeathEffect.global_position = global_position
+	enemyDeathEffect.global_position = global_position
