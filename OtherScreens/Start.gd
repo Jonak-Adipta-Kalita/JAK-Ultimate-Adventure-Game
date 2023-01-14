@@ -7,6 +7,8 @@ onready var mainWindow = $MainWindow
 var loaded = false
 
 func _ready():
+	randomize()
+
 	intro.visible = true
 	mainWindow.visible = false
 	
