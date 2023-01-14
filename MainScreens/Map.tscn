@@ -49,6 +49,8 @@ remote_path = NodePath("../../../Camera")
 
 [node name="Bushes" type="YSort" parent="YSort"]
 
+[node name="Buildings" type="YSort" parent="YSort"]
+
 [node name="Trees" type="YSort" parent="YSort"]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
