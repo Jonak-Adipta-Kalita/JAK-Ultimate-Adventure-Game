@@ -1,0 +1,41 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Player/Player.png" type="Texture" id=1]
+[ext_resource path="res://OtherScreens/logo.png" type="Texture" id=2]
+[ext_resource path="res://OtherScreens/Menu.gd" type="Script" id=3]
+
+[node name="Menu" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="Background" type="ColorRect" parent="."]
+margin_right = 320.0
+margin_bottom = 180.0
+
+[node name="Logo" type="Sprite" parent="."]
+position = Vector2( 160, 72 )
+scale = Vector2( 0.623348, 0.5 )
+texture = ExtResource( 2 )
+
+[node name="PlayerIcon" type="Sprite" parent="."]
+position = Vector2( 168, 32 )
+scale = Vector2( 1.28084, 1.375 )
+texture = ExtResource( 1 )
+hframes = 60
+frame = 21
+
+[node name="PlayButton" type="Button" parent="."]
+margin_left = 104.0
+margin_top = 112.0
+margin_right = 142.0
+margin_bottom = 132.0
+text = "Play"
+
+[node name="CreditsButton" type="Button" parent="."]
+margin_left = 176.0
+margin_top = 112.0
+margin_right = 233.0
+margin_bottom = 132.0
+text = "Credits"
+
+[connection signal="pressed" from="PlayButton" to="." method="_on_PlayButton_pressed"]
+[connection signal="pressed" from="CreditsButton" to="." method="_on_CreditsButton_pressed"]
