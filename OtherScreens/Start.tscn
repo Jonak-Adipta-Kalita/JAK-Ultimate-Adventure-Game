@@ -56,7 +56,6 @@ tracks/0/keys = {
 script = ExtResource( 3 )
 
 [node name="Intro" type="Node2D" parent="."]
-visible = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Intro"]
 anims/FadeIn = SubResource( 1 )
@@ -75,6 +74,7 @@ margin_right = 344.0
 margin_bottom = 201.0
 
 [node name="MainWindow" type="Node2D" parent="."]
+visible = false
 
 [node name="Background" type="ColorRect" parent="MainWindow"]
 margin_right = 320.0
