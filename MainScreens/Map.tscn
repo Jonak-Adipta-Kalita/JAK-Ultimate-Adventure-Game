@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Tiles/CliffTile.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Tiles/WaterTile.tscn" type="PackedScene" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://Tiles/DirtTile.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=6]
 [ext_resource path="res://World/GrassBackground.png" type="Texture" id=7]
+[ext_resource path="res://Buildings/Lab.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Buildings/House1.tscn" type="PackedScene" id=9]
 
 [node name="Map" type="Node2D"]
 __meta__ = {
@@ -50,6 +52,15 @@ remote_path = NodePath("../../../Camera")
 [node name="Bushes" type="YSort" parent="YSort"]
 
 [node name="Buildings" type="YSort" parent="YSort"]
+
+[node name="House1" parent="YSort/Buildings" instance=ExtResource( 9 )]
+position = Vector2( 58, 100 )
+
+[node name="House2" parent="YSort/Buildings" instance=ExtResource( 9 )]
+position = Vector2( 170, 41 )
+
+[node name="Lab" parent="YSort/Buildings" instance=ExtResource( 8 )]
+position = Vector2( 273, 92 )
 
 [node name="Trees" type="YSort" parent="YSort"]
 
