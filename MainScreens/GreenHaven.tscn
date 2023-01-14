@@ -1,20 +1,20 @@
 [gd_scene load_steps=61 format=2]
 
-[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://World/Bush.tscn" type="PackedScene" id=2]
-[ext_resource path="res://World/GrassBackground.png" type="Texture" id=3]
-[ext_resource path="res://World/DirtTileset.png" type="Texture" id=4]
-[ext_resource path="res://World/CliffTileset.png" type="Texture" id=5]
-[ext_resource path="res://World/Grass.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Enemies/Bat.tscn" type="PackedScene" id=7]
-[ext_resource path="res://UI/HealthUI.tscn" type="PackedScene" id=8]
-[ext_resource path="res://World/Tree.tscn" type="PackedScene" id=9]
-[ext_resource path="res://World/TownScreen.gd" type="Script" id=10]
-[ext_resource path="res://Overlap/Camera.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Overlap/Camera.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Enemies/Bat.tscn" type="PackedScene" id=3]
+[ext_resource path="res://World/Grass.tscn" type="PackedScene" id=4]
+[ext_resource path="res://World/Tree.tscn" type="PackedScene" id=5]
+[ext_resource path="res://UI/HealthUI.tscn" type="PackedScene" id=6]
+[ext_resource path="res://World/Bush.tscn" type="PackedScene" id=7]
+[ext_resource path="res://MainScreens/TownScreen.gd" type="Script" id=8]
+[ext_resource path="res://World/GrassBackground.png" type="Texture" id=9]
+[ext_resource path="res://World/DirtTileset.png" type="Texture" id=10]
+[ext_resource path="res://World/CliffTileset.png" type="Texture" id=11]
 
 [sub_resource type="TileSet" id=1]
 0/name = "DirtTileset.png 0"
-0/texture = ExtResource( 4 )
+0/texture = ExtResource( 10 )
 0/tex_offset = Vector2( 0, 0 )
 0/modulate = Color( 1, 1, 1, 1 )
 0/region = Rect2( 0, 0, 176, 80 )
@@ -180,7 +180,7 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 
 [sub_resource type="TileSet" id=2]
 0/name = "CliffTileset.png 0"
-0/texture = ExtResource( 5 )
+0/texture = ExtResource( 11 )
 0/tex_offset = Vector2( 0, 0 )
 0/modulate = Color( 1, 1, 1, 1 )
 0/region = Rect2( 0, 0, 352, 160 )
@@ -487,7 +487,7 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 0/z_index = 0
 
 [node name="World" type="Node2D"]
-script = ExtResource( 10 )
+script = ExtResource( 8 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -495,7 +495,7 @@ __meta__ = {
 [node name="Background" type="Sprite" parent="."]
 position = Vector2( 256, 128 )
 scale = Vector2( 2, 2.13333 )
-texture = ExtResource( 3 )
+texture = ExtResource( 9 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 320, 180 )
 
@@ -512,7 +512,7 @@ collision_mask = 0
 format = 1
 tile_data = PoolIntArray( -131062, 0, 0, -131061, 0, 1, -131060, 0, 1, -131059, 0, 1, -131058, 0, 1, -131057, 0, 2, -65526, 0, 65536, -65525, 0, 65537, -65524, 0, 65537, -65523, 0, 65537, -65522, 0, 65537, -65521, 0, 65538, 10, 0, 65536, 11, 0, 65541, 12, 0, 131073, 13, 0, 131073, 14, 0, 131073, 15, 0, 131074, 65546, 0, 131072, 65547, 0, 131074, 327685, 0, 0, 327686, 0, 1, 327687, 0, 1, 327688, 0, 1, 327689, 0, 1, 327690, 0, 1, 327691, 0, 1, 327692, 0, 1, 327693, 0, 1, 327694, 0, 1, 327695, 0, 2, 393221, 0, 131072, 393222, 0, 65542, 393223, 0, 65537, 393224, 0, 65537, 393225, 0, 65537, 393226, 0, 65537, 393227, 0, 65537, 393228, 0, 65537, 393229, 0, 65537, 393230, 0, 65537, 393231, 0, 65538, 458758, 0, 131072, 458759, 0, 65542, 458760, 0, 65537, 458761, 0, 65537, 458762, 0, 65537, 458763, 0, 65537, 458764, 0, 65537, 458765, 0, 65537, 458766, 0, 65537, 458767, 0, 65538, 524295, 0, 131072, 524296, 0, 65542, 524297, 0, 65537, 524298, 0, 65537, 524299, 0, 65537, 524300, 0, 65537, 524301, 0, 65537, 524302, 0, 65537, 524303, 0, 65538, 589832, 0, 131072, 589833, 0, 131073, 589834, 0, 131073, 589835, 0, 131073, 589836, 0, 131073, 589837, 0, 131073, 589838, 0, 131073, 589839, 0, 131074 )
 
-[node name="Camera" parent="." instance=ExtResource( 11 )]
+[node name="Camera" parent="." instance=ExtResource( 1 )]
 position = Vector2( 160, 96 )
 
 [node name="TopLeft" parent="Camera/Limits" index="0"]
@@ -523,7 +523,7 @@ position = Vector2( 576, 320 )
 
 [node name="YSort" type="YSort" parent="."]
 
-[node name="Player" parent="YSort" instance=ExtResource( 1 )]
+[node name="Player" parent="YSort" instance=ExtResource( 2 )]
 position = Vector2( 160, 96 )
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="YSort/Player"]
@@ -531,90 +531,90 @@ remote_path = NodePath("../../../Camera")
 
 [node name="Bats" type="YSort" parent="YSort"]
 
-[node name="Bat" parent="YSort/Bats" instance=ExtResource( 7 )]
+[node name="Bat" parent="YSort/Bats" instance=ExtResource( 3 )]
 position = Vector2( 424, 56 )
 
-[node name="Bat2" parent="YSort/Bats" instance=ExtResource( 7 )]
+[node name="Bat2" parent="YSort/Bats" instance=ExtResource( 3 )]
 position = Vector2( 64, 40 )
 
-[node name="Bat3" parent="YSort/Bats" instance=ExtResource( 7 )]
+[node name="Bat3" parent="YSort/Bats" instance=ExtResource( 3 )]
 position = Vector2( 40, 160 )
 
 [node name="Bushes" type="YSort" parent="YSort"]
 
-[node name="Bush1" parent="YSort/Bushes" instance=ExtResource( 2 )]
+[node name="Bush1" parent="YSort/Bushes" instance=ExtResource( 7 )]
 position = Vector2( 117, 23 )
 
-[node name="Bush3" parent="YSort/Bushes" instance=ExtResource( 2 )]
+[node name="Bush3" parent="YSort/Bushes" instance=ExtResource( 7 )]
 position = Vector2( 136, 51 )
 
-[node name="Bush2" parent="YSort/Bushes" instance=ExtResource( 2 )]
+[node name="Bush2" parent="YSort/Bushes" instance=ExtResource( 7 )]
 position = Vector2( 152, 22 )
 
 [node name="Grasses" type="YSort" parent="YSort"]
 
-[node name="Grass" parent="YSort/Grasses" instance=ExtResource( 6 )]
+[node name="Grass" parent="YSort/Grasses" instance=ExtResource( 4 )]
 position = Vector2( 296, 40 )
 
-[node name="Grass2" parent="YSort/Grasses" instance=ExtResource( 6 )]
+[node name="Grass2" parent="YSort/Grasses" instance=ExtResource( 4 )]
 position = Vector2( 296, 16 )
 
-[node name="Grass3" parent="YSort/Grasses" instance=ExtResource( 6 )]
+[node name="Grass3" parent="YSort/Grasses" instance=ExtResource( 4 )]
 position = Vector2( 272, 16 )
 
-[node name="Grass4" parent="YSort/Grasses" instance=ExtResource( 6 )]
+[node name="Grass4" parent="YSort/Grasses" instance=ExtResource( 4 )]
 position = Vector2( 272, 40 )
 
-[node name="Grass5" parent="YSort/Grasses" instance=ExtResource( 6 )]
+[node name="Grass5" parent="YSort/Grasses" instance=ExtResource( 4 )]
 position = Vector2( 248, 16 )
 
-[node name="Grass6" parent="YSort/Grasses" instance=ExtResource( 6 )]
+[node name="Grass6" parent="YSort/Grasses" instance=ExtResource( 4 )]
 position = Vector2( 248, 40 )
 
-[node name="Grass7" parent="YSort/Grasses" instance=ExtResource( 6 )]
+[node name="Grass7" parent="YSort/Grasses" instance=ExtResource( 4 )]
 position = Vector2( 248, -8 )
 
-[node name="Grass8" parent="YSort/Grasses" instance=ExtResource( 6 )]
+[node name="Grass8" parent="YSort/Grasses" instance=ExtResource( 4 )]
 position = Vector2( 248, -32 )
 
-[node name="Grass9" parent="YSort/Grasses" instance=ExtResource( 6 )]
+[node name="Grass9" parent="YSort/Grasses" instance=ExtResource( 4 )]
 position = Vector2( 272, -32 )
 
-[node name="Grass10" parent="YSort/Grasses" instance=ExtResource( 6 )]
+[node name="Grass10" parent="YSort/Grasses" instance=ExtResource( 4 )]
 position = Vector2( 296, -8 )
 
-[node name="Grass11" parent="YSort/Grasses" instance=ExtResource( 6 )]
+[node name="Grass11" parent="YSort/Grasses" instance=ExtResource( 4 )]
 position = Vector2( 296, -32 )
 
-[node name="Grass12" parent="YSort/Grasses" instance=ExtResource( 6 )]
+[node name="Grass12" parent="YSort/Grasses" instance=ExtResource( 4 )]
 position = Vector2( 272, -56 )
 
-[node name="Grass13" parent="YSort/Grasses" instance=ExtResource( 6 )]
+[node name="Grass13" parent="YSort/Grasses" instance=ExtResource( 4 )]
 position = Vector2( 248, -56 )
 
-[node name="Grass14" parent="YSort/Grasses" instance=ExtResource( 6 )]
+[node name="Grass14" parent="YSort/Grasses" instance=ExtResource( 4 )]
 position = Vector2( 272, -8 )
 
-[node name="Grass15" parent="YSort/Grasses" instance=ExtResource( 6 )]
+[node name="Grass15" parent="YSort/Grasses" instance=ExtResource( 4 )]
 position = Vector2( 296, -56 )
 
 [node name="Trees" type="YSort" parent="YSort"]
 
-[node name="Tree1" parent="YSort/Trees" instance=ExtResource( 9 )]
+[node name="Tree1" parent="YSort/Trees" instance=ExtResource( 5 )]
 position = Vector2( 208, 152 )
 
-[node name="Tree2" parent="YSort/Trees" instance=ExtResource( 9 )]
+[node name="Tree2" parent="YSort/Trees" instance=ExtResource( 5 )]
 position = Vector2( 176, 152 )
 
-[node name="Tree3" parent="YSort/Trees" instance=ExtResource( 9 )]
+[node name="Tree3" parent="YSort/Trees" instance=ExtResource( 5 )]
 position = Vector2( 240, 152 )
 
-[node name="Tree4" parent="YSort/Trees" instance=ExtResource( 9 )]
+[node name="Tree4" parent="YSort/Trees" instance=ExtResource( 5 )]
 position = Vector2( 272, 152 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="HealthUI" parent="CanvasLayer" instance=ExtResource( 8 )]
+[node name="HealthUI" parent="CanvasLayer" instance=ExtResource( 6 )]
 margin_left = 8.0
 margin_top = 8.0
 margin_right = 157.0
