@@ -91,3 +91,20 @@ scale = Vector2( 1.28084, 1.375 )
 texture = ExtResource( 2 )
 hframes = 60
 frame = 21
+
+[node name="PlayButton" type="Button" parent="MainWindow"]
+margin_left = 104.0
+margin_top = 112.0
+margin_right = 142.0
+margin_bottom = 132.0
+text = "Play"
+
+[node name="CreditsButton" type="Button" parent="MainWindow"]
+margin_left = 176.0
+margin_top = 112.0
+margin_right = 233.0
+margin_bottom = 132.0
+text = "Credits"
+
+[connection signal="pressed" from="MainWindow/PlayButton" to="." method="_on_PlayButton_pressed"]
+[connection signal="pressed" from="MainWindow/CreditsButton" to="." method="_on_CreditsButton_pressed"]

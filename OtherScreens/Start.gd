@@ -2,8 +2,9 @@ extends Node2D
 
 onready var intro = $Intro
 onready var introAnimationPlayer = $Intro/AnimationPlayer
-
 onready var mainWindow = $MainWindow
+
+var loaded = false
 
 func _ready():
 	intro.visible = true
@@ -16,3 +17,11 @@ func _ready():
 	
 	intro.visible = false
 	mainWindow.visible = true
+	
+	loaded = true
+
+func _on_PlayButton_pressed():
+	var _change_scene_error = get_tree().change_scene("res://World.tscn")
+
+func _on_CreditsButton_pressed():
+	pass
