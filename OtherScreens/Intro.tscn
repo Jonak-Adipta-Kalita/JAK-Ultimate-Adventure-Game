@@ -60,7 +60,7 @@ anims/RESET = SubResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 158, 90 )
-scale = Vector2( 0.166667, 0.166667 )
+scale = Vector2( 0.16875, 0.166667 )
 texture = ExtResource( 2 )
 
 [node name="ColorRect" type="ColorRect" parent="."]

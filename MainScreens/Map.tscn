@@ -16,8 +16,8 @@ __meta__ = {
 }
 
 [node name="Background" type="Sprite" parent="."]
-position = Vector2( 176, 88 )
-scale = Vector2( 2, 2.13333 )
+position = Vector2( 280, 180 )
+scale = Vector2( 2.65, 3.15555 )
 texture = ExtResource( 7 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 320, 180 )
@@ -35,7 +35,7 @@ position = Vector2( 160, 96 )
 position = Vector2( -144, -104 )
 
 [node name="BottomRight" parent="Camera/Limits" index="1"]
-position = Vector2( 496, 280 )
+position = Vector2( 704, 464 )
 
 [node name="YSort" type="YSort" parent="."]
 
@@ -55,9 +55,6 @@ remote_path = NodePath("../../../Camera")
 
 [node name="House1" parent="YSort/Buildings" instance=ExtResource( 9 )]
 position = Vector2( 58, 100 )
-
-[node name="House2" parent="YSort/Buildings" instance=ExtResource( 9 )]
-position = Vector2( 171, 31 )
 
 [node name="Lab" parent="YSort/Buildings" instance=ExtResource( 8 )]
 position = Vector2( 273, 92 )
