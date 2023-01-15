@@ -10,6 +10,7 @@
 extents = Vector2( 41.6667, 24.6667 )
 
 [node name="House1" type="StaticBody2D"]
+collision_mask = 65
 script = ExtResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="."]
