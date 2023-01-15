@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Buildings/Lab.png" type="Texture" id=1]
 [ext_resource path="res://Overlap/DoorCollider.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Overlap/DoorCollider.gd" type="Script" id=3]
+[ext_resource path="res://Buildings/Buildings.gd" type="Script" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 57.3333, 24 )
@@ -11,6 +12,7 @@ extents = Vector2( 57.3333, 24 )
 extents = Vector2( 10, 10.6 )
 
 [node name="Lab" type="StaticBody2D"]
+script = ExtResource( 4 )
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 0, -10 )

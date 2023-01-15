@@ -18,7 +18,6 @@ var state = MOVE
 var roll_vector = Vector2.DOWN
 var stats = PlayerStats
 
-onready var animationPlayer = $AnimationPlayer
 onready var animationTree = $AnimationTree
 onready var animationState = animationTree.get("parameters/playback")
 onready var swordHitbox = $HitBoxPivot/SwordHitBox

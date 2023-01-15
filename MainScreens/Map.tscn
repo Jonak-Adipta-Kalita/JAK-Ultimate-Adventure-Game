@@ -57,10 +57,11 @@ remote_path = NodePath("../../../Camera")
 position = Vector2( 58, 100 )
 
 [node name="House2" parent="YSort/Buildings" instance=ExtResource( 9 )]
-position = Vector2( 170, 41 )
+position = Vector2( 171, 31 )
 
 [node name="Lab" parent="YSort/Buildings" instance=ExtResource( 8 )]
 position = Vector2( 273, 92 )
+pathToInterrior = ".res://Buildings/Interriors/LabInterrior.tscn"
 
 [node name="Trees" type="YSort" parent="YSort"]
 
