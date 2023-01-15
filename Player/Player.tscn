@@ -365,7 +365,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ 36 ]
+"values": [ 9 ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("HitBoxPivot:rotation_degrees")
@@ -759,7 +759,7 @@ states/Run/node = SubResource( 23 )
 states/Run/position = Vector2( 452.333, 69.6667 )
 transitions = [ "Idle", "Run", SubResource( 24 ), "Run", "Idle", SubResource( 25 ), "Idle", "Attack", SubResource( 32 ), "Attack", "Idle", SubResource( 33 ), "Roll", "Idle", SubResource( 48 ), "Idle", "Roll", SubResource( 49 ) ]
 start_node = "Idle"
-graph_offset = Vector2( -226, -8 )
+graph_offset = Vector2( -233, -74 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=17]
 
@@ -782,7 +782,7 @@ texture = ExtResource( 6 )
 position = Vector2( 0, -9 )
 texture = ExtResource( 2 )
 hframes = 60
-frame = 36
+frame = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = -1.5708
@@ -811,13 +811,14 @@ anims/RunUp = SubResource( 4 )
 tree_root = SubResource( 16 )
 anim_player = NodePath("../AnimationPlayer")
 parameters/playback = SubResource( 17 )
-parameters/Attack/blend_position = Vector2( 0, 1 )
-parameters/Idle/blend_position = Vector2( 0, 1 )
-parameters/Roll/blend_position = Vector2( 0, 1 )
-parameters/Run/blend_position = Vector2( 0, 1 )
+parameters/Attack/blend_position = Vector2( 0, -1 )
+parameters/Idle/blend_position = Vector2( 0, -1 )
+parameters/Roll/blend_position = Vector2( 0, -1 )
+parameters/Run/blend_position = Vector2( 0, -1 )
 
 [node name="HitBoxPivot" type="Position2D" parent="."]
 position = Vector2( 0, -4 )
+rotation = 4.71239
 __meta__ = {
 "_gizmo_extents_": 8.0
 }
@@ -839,7 +840,7 @@ position = Vector2( 0, -8 )
 shape = SubResource( 50 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 8 )
+stream = ExtResource( 7 )
 
 [connection signal="area_entered" from="HurtBox" to="." method="_on_HurtBox_area_entered"]
 
