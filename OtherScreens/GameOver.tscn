@@ -13,7 +13,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 2 ),
+"times": PoolRealArray( 0, 2.8 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ), Color( 0, 0, 0, 1 ) ]
@@ -29,6 +29,20 @@ tracks/1/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ true, false ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 3 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "fuck"
+} ]
 }
 
 [sub_resource type="Animation" id=2]
@@ -96,6 +110,7 @@ margin_left = -8.0
 margin_top = -8.0
 margin_right = 328.0
 margin_bottom = 192.0
+mouse_filter = 2
 color = Color( 1, 1, 1, 0 )
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
