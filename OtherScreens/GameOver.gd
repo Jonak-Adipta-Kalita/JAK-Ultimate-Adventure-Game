@@ -20,6 +20,3 @@ func _on_MenuButton_pressed():
 
 func _on_Timer_timeout():
 	var _change_scene_error = get_tree().change_scene(change_scene_to)
-
-func fuck():
-	print("me funcking stopped...")
