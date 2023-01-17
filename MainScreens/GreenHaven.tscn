@@ -10,7 +10,7 @@
 [ext_resource path="res://World/Grass.tscn" type="PackedScene" id=8]
 [ext_resource path="res://World/Bush.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Enemies/Bat.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Consumable/Apple.tscn" type="PackedScene" id=11]
+[ext_resource path="res://InteractableItems/Chest.tscn" type="PackedScene" id=11]
 
 [node name="GreenHaven" type="Node2D"]
 
@@ -45,13 +45,10 @@ position = Vector2( 416, 344 )
 [node name="Bat4" parent="YSort/Bats" instance=ExtResource( 10 )]
 position = Vector2( 504, 176 )
 
-[node name="Consumable" type="YSort" parent="YSort"]
+[node name="Chests" type="YSort" parent="YSort"]
 
-[node name="Apple" parent="YSort/Consumable" instance=ExtResource( 11 )]
-position = Vector2( 304, 96 )
-
-[node name="Apple2" parent="YSort/Consumable" instance=ExtResource( 11 )]
-position = Vector2( 328, 96 )
+[node name="Chest" parent="YSort/Chests" instance=ExtResource( 11 )]
+position = Vector2( 328, 80 )
 
 [node name="Grasses" type="YSort" parent="YSort"]
 

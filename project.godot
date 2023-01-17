@@ -120,6 +120,7 @@ roll={
 2d_physics/layer_6="SoftCollision"
 2d_physics/layer_7="Flying"
 2d_physics/layer_8="Consumable"
+2d_physics/layer_9="Interactable"
 
 [mono]
 
