@@ -50,6 +50,9 @@ position = Vector2( 504, 176 )
 [node name="Apple" parent="YSort/Consumable" instance=ExtResource( 11 )]
 position = Vector2( 304, 96 )
 
+[node name="Apple2" parent="YSort/Consumable" instance=ExtResource( 11 )]
+position = Vector2( 328, 96 )
+
 [node name="Grasses" type="YSort" parent="YSort"]
 
 [node name="Grass" parent="YSort/Grasses" instance=ExtResource( 8 )]

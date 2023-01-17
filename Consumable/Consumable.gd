@@ -6,11 +6,9 @@ onready var audioStreamPlayer = $AudioStreamPlayer2D
 
 func _on_Consumable_body_entered(_body):
 	if not PlayerStats.health == PlayerStats.max_health:
-		PlayerStats.health += heal_points
-		if !audioStreamPlayer.is_playing():
-			audioStreamPlayer.play()
-			print("playing")
-		print("played")
+		PlayerStats.health = min(PlayerStats.health + heal_points, PlayerStats.max_health)
+		audioStreamPlayer.play()
+		visible = false
 
 func _on_AudioStreamPlayer2D_finished():
 	queue_free()
