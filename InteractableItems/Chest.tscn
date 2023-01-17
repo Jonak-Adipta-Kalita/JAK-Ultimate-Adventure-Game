@@ -74,6 +74,9 @@ anims/RESET = SubResource( 2 )
 position = Vector2( 0.5, 2.5 )
 shape = SubResource( 4 )
 
+[node name="DroppedItem" type="Node2D" parent="."]
+position = Vector2( 0, 17 )
+
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2( 0, 1 )
 collision_layer = 2
