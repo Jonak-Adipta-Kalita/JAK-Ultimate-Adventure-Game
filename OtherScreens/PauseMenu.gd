@@ -1,24 +1,23 @@
 extends Node2D
 
-onready var audioStreamPlayer = $AudioStreamPlayer2D
+onready var pauseAudioStreamPlayer = $PauseAudioStreamPlayer2D
+onready var unPauseAudioStreamPlayer = $UnpauseAudioStreamPlayer2D
+onready var menuMoveAudioStreamPlayer = $MenuMoveAudioStreamPlayer2D
+onready var menuSelectAudioStreamPlayer = $MenuSelectAudioStreamPlayer2D
 
 func _ready():
-	audioStreamPlayer.stream = preload("res://Music and Sounds/Pause.wav")
-	audioStreamPlayer.play()
+	pauseAudioStreamPlayer.play()
 
 func play_hover_sound():
-	audioStreamPlayer.stream = preload("res://Music and Sounds/Menu Move.wav")
-	audioStreamPlayer.play()
+	menuMoveAudioStreamPlayer.play()
 
 func play_menu_select_sound():
-	audioStreamPlayer.stream = preload("res://Music and Sounds/Menu Select.wav")
-	audioStreamPlayer.play()
+	menuSelectAudioStreamPlayer.play()
 
 func _on_ResumeButton_pressed():
 	play_menu_select_sound()
 	get_tree().paused = false
-	audioStreamPlayer.stream = preload("res://Music and Sounds/Unpause.wav")
-	audioStreamPlayer.play()
+	unPauseAudioStreamPlayer.play()
 
 func _on_ExitButton_pressed():
 	play_menu_select_sound()
@@ -26,5 +25,5 @@ func _on_ExitButton_pressed():
 	var _change_scene_error = get_tree().change_scene("res://OtherScreens/Menu.tscn")
 
 func _process(_delta):
-	if Input.is_action_just_pressed("ui_cancel"):
+	if Input.is_action_just_pressed("ui_cancel") and get_tree().paused:
 		get_tree().paused = false
