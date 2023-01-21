@@ -1,8 +1,14 @@
 extends Area2D
 
-export(int) var heal_points = 0
+var heal_points = 3
 
 onready var audioStreamPlayer = $AudioStreamPlayer2D
+onready var sprite = $Sprite
+
+func _ready():
+	randomize()
+	var random_frame = randi() % 35 + 1
+	sprite.frame = random_frame
 
 func _on_Consumable_body_entered(_body):
 	if not PlayerStats.health == PlayerStats.max_health:
