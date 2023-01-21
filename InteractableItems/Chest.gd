@@ -3,7 +3,7 @@ extends StaticBody2D
 onready var animationPlayer = $AnimationPlayer
 onready var droppedItem = $DroppedItem
 
-var item_to_drop = preload("res://Consumable/Apple.tscn").instance()
+var item_to_drop = preload("res://Consumable/Mushroom.tscn").instance()
 
 var can_interract = false
 var is_open = false
