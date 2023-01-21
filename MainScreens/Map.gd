@@ -13,6 +13,7 @@ func _process(_delta):
 		canvasLayer.visible = false
 		if not showed_pause_menu:
 			get_parent().add_child(pauseMenu)
+			pauseMenu.play_pause_sound()
 			showed_pause_menu = true
 	else:
 		canvasLayer.visible = true

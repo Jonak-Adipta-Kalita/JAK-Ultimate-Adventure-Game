@@ -1,12 +1,8 @@
 extends Node2D
 
 onready var pauseAudioStreamPlayer = $PauseAudioStreamPlayer2D
-onready var unPauseAudioStreamPlayer = $UnpauseAudioStreamPlayer2D
 onready var menuMoveAudioStreamPlayer = $MenuMoveAudioStreamPlayer2D
 onready var menuSelectAudioStreamPlayer = $MenuSelectAudioStreamPlayer2D
-
-func _ready():
-	pauseAudioStreamPlayer.play()
 
 func play_hover_sound():
 	menuMoveAudioStreamPlayer.play()
@@ -14,10 +10,12 @@ func play_hover_sound():
 func play_menu_select_sound():
 	menuSelectAudioStreamPlayer.play()
 
+func play_pause_sound():
+	pauseAudioStreamPlayer.play()
+
 func _on_ResumeButton_pressed():
 	play_menu_select_sound()
 	get_tree().paused = false
-	unPauseAudioStreamPlayer.play()
 
 func _on_ExitButton_pressed():
 	play_menu_select_sound()
