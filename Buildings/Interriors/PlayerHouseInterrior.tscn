@@ -13,7 +13,7 @@
 position = Vector2( -3.8147e-06, -3.8147e-06 )
 
 [node name="TV" parent="YSort" index="2" instance=ExtResource( 3 )]
-position = Vector2( 160, 32 )
+position = Vector2( 240, 24 )
 
 [node name="BigTable" parent="YSort" index="3" instance=ExtResource( 5 )]
 position = Vector2( 240, 104 )
