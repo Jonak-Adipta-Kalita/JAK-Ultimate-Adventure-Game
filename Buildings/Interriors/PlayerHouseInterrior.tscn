@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Buildings/Interriors/BuildingInterrior.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Buildings/Interriors/Objects/Floor.tscn" type="PackedScene" id=2]
@@ -8,6 +8,8 @@
 [ext_resource path="res://Buildings/Interriors/Objects/ChairX.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Buildings/Interriors/Objects/Candles.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Tiles/WallTile.png" type="Texture" id=8]
+[ext_resource path="res://Buildings/Interriors/Objects/FlowerPot.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Buildings/Interriors/Objects/Painting.tscn" type="PackedScene" id=10]
 
 [node name="PlayerHouseInterrior" instance=ExtResource( 1 )]
 
@@ -57,6 +59,12 @@ frame = 3
 
 [node name="CollisionShape2D" parent="YSort/Chairs/ChairY2" index="1"]
 position = Vector2( 0.2, 2.5 )
+
+[node name="FlowerPot" parent="YSort" index="7" instance=ExtResource( 9 )]
+position = Vector2( 293, 53 )
+
+[node name="Painting" parent="YSort" index="8" instance=ExtResource( 10 )]
+position = Vector2( 46, 29 )
 
 [node name="NoYSort" type="Node2D" parent="." index="1"]
 position = Vector2( -282, -254 )
