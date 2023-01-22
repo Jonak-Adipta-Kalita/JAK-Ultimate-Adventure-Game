@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Buildings/Interriors/BuildingInterrior.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Buildings/Interriors/Objects/Floor.tscn" type="PackedScene" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Tiles/WallTile.png" type="Texture" id=8]
 [ext_resource path="res://Buildings/Interriors/Objects/FlowerPot.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Buildings/Interriors/Objects/Painting.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Buildings/Interriors/Objects/Clock.tscn" type="PackedScene" id=11]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 152, 23 )
@@ -73,6 +74,9 @@ position = Vector2( 293, 53 )
 
 [node name="Painting" parent="YSort" index="8" instance=ExtResource( 10 )]
 position = Vector2( 80, 24 )
+
+[node name="Clock" parent="YSort" index="9" instance=ExtResource( 11 )]
+position = Vector2( 272, 24 )
 
 [node name="NoYSort" type="Node2D" parent="." index="1"]
 position = Vector2( -282, -254 )
