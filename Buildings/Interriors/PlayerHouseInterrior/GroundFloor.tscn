@@ -1,0 +1,72 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Buildings/Interriors/PlayerHouseInterrior/GroundFloor.gd" type="Script" id=1]
+[ext_resource path="res://Buildings/Interriors/Objects/Painting.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Buildings/Interriors/PlayerHouseInterrior/Background.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Buildings/Interriors/Objects/BigTable.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Buildings/Interriors/Objects/ChairX.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Buildings/Interriors/Objects/Clock.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Buildings/Interriors/Objects/StairUp.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Buildings/Interriors/Objects/FlowerPot.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Buildings/Interriors/Objects/ChairY.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Buildings/Interriors/Objects/TV.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Buildings/Interriors/BuildingInterrior.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Buildings/Interriors/Objects/Candles.tscn" type="PackedScene" id=12]
+
+[node name="GroundFloor" instance=ExtResource( 11 )]
+script = ExtResource( 1 )
+
+[node name="Background" parent="YSort" index="0" instance=ExtResource( 3 )]
+
+[node name="TV" parent="YSort" index="1" instance=ExtResource( 10 )]
+position = Vector2( 64, 59 )
+
+[node name="BigTable" parent="YSort" index="2" instance=ExtResource( 4 )]
+position = Vector2( 63, 131 )
+
+[node name="Chairs" type="YSort" parent="YSort" index="4"]
+
+[node name="ChairX" parent="YSort/Chairs" index="0" instance=ExtResource( 5 )]
+position = Vector2( 24, 127 )
+
+[node name="ChairX2" parent="YSort/Chairs" index="1" instance=ExtResource( 5 )]
+position = Vector2( 102, 127 )
+
+[node name="Sprite" parent="YSort/Chairs/ChairX2" index="0"]
+frame = 2
+
+[node name="ChairY" parent="YSort/Chairs" index="2" instance=ExtResource( 9 )]
+position = Vector2( 62, 107 )
+
+[node name="ChairY2" parent="YSort/Chairs" index="3" instance=ExtResource( 9 )]
+position = Vector2( 65, 153 )
+
+[node name="Sprite" parent="YSort/Chairs/ChairY2" index="0"]
+frame = 3
+
+[node name="CollisionShape2D" parent="YSort/Chairs/ChairY2" index="1"]
+position = Vector2( 0.2, 2.5 )
+
+[node name="FlowerPot" parent="YSort" index="5" instance=ExtResource( 8 )]
+position = Vector2( 24, 64 )
+
+[node name="Painting" parent="YSort" index="6" instance=ExtResource( 2 )]
+position = Vector2( 280, 24 )
+
+[node name="Clock" parent="YSort" index="7" instance=ExtResource( 6 )]
+position = Vector2( 32, 24 )
+
+[node name="StairUp" parent="YSort" index="8" instance=ExtResource( 7 )]
+position = Vector2( 307, 55 )
+
+[node name="NoYSort" type="Node2D" parent="YSort" index="9"]
+position = Vector2( -282, -254 )
+z_index = 1
+
+[node name="Candles" parent="YSort/NoYSort" index="0" instance=ExtResource( 12 )]
+position = Vector2( 345, 380 )
+
+[connection signal="go_up" from="YSort/StairUp" to="." method="_on_StairUp_go_up"]
+
+[editable path="YSort/Chairs/ChairX2"]
+[editable path="YSort/Chairs/ChairY2"]

@@ -196,7 +196,7 @@ position = Vector2( 160, 144 )
 
 [node name="PlayerHouse" parent="YSort/Buildings" instance=ExtResource( 5 )]
 position = Vector2( 112, 288 )
-pathToInterrior = "res://Buildings/Interriors/PlayerHouseInterrior.tscn"
+pathToInterrior = "res://Buildings/Interriors/PlayerHouseInterrior/GroundFloor.tscn"
 
 [node name="Lab" parent="YSort/Buildings" instance=ExtResource( 3 )]
 position = Vector2( 464, -128 )

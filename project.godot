@@ -121,6 +121,7 @@ roll={
 2d_physics/layer_7="Flying"
 2d_physics/layer_8="Consumable"
 2d_physics/layer_9="Interactable"
+2d_physics/layer_10="Stairs"
 
 [mono]
 
