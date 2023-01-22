@@ -32,7 +32,7 @@ shape = SubResource( 1 )
 position = Vector2( -3.8147e-06, 48 )
 scale = Vector2( 6.66667, 4.125 )
 
-[node name="ColorRect" type="ColorRect" parent="YSort" index="2"]
+[node name="WallShadow" type="ColorRect" parent="YSort" index="2"]
 self_modulate = Color( 1, 1, 1, 0.262745 )
 margin_top = 48.0
 margin_right = 320.0
