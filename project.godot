@@ -18,6 +18,7 @@ config/icon="res://icon.png"
 
 PlayerStats="*res://Player/PlayerStats.tscn"
 BackgroundMusic="*res://Music and Sounds/BackgroundMusic.tscn"
+SceneTransition="*res://Overlap/SceneTransition.tscn"
 
 [display]
 

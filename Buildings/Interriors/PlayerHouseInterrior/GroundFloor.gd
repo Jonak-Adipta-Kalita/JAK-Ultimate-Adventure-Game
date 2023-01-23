@@ -1,4 +1,4 @@
 extends Node2D
 
 func _on_StairUp_go_up():
-	pass
+	SceneTransition.change_scene("res://Buildings/Interriors/PlayerHouseInterrior/FirstFloor.tscn")
