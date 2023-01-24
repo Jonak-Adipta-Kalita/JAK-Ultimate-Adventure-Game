@@ -21,7 +21,7 @@ script = ExtResource( 5 )
 polygon = PoolVector2Array( 0, 48, 0, 180, 107, 180, 136, 180, 143, 180, 160, 180, 177, 180, 181, 180, 185, 180, 320, 180, 320, 48, 327, 48, 326, 181, 326, 188, 185, 188, 173, 188, 145, 188, 122, 188, -9, 187, -9, 48 )
 
 [node name="Carpet" parent="." instance=ExtResource( 4 )]
-position = Vector2( 293.25, 68.8712 )
+position = Vector2( 293, 70.8712 )
 rotation = 1.5708
 
 [node name="YSort" type="YSort" parent="."]
