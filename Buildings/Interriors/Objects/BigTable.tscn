@@ -6,6 +6,7 @@
 extents = Vector2( 15, 9.5 )
 
 [node name="BigTable" type="StaticBody2D"]
+scale = Vector2( 1.5, 1.5 )
 
 [node name="Sprite" type="Sprite" parent="."]
 scale = Vector2( 2, 2 )

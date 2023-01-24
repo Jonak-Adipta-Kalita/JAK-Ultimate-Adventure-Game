@@ -6,6 +6,7 @@
 extents = Vector2( 6, 6 )
 
 [node name="ChairX" type="StaticBody2D"]
+scale = Vector2( 1.5, 1.5 )
 
 [node name="Sprite" type="Sprite" parent="."]
 scale = Vector2( 1.7, 1.7 )
