@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Buildings/Interriors/PlayerHouseInterrior/GroundFloor.gd" type="Script" id=1]
 [ext_resource path="res://Buildings/Interriors/Objects/Painting.tscn" type="PackedScene" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://Buildings/Interriors/BuildingInterrior.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Buildings/Interriors/Objects/Candles.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Buildings/Interriors/Objects/Carpet.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Buildings/Interriors/Objects/Window.tscn" type="PackedScene" id=14]
 
 [node name="GroundFloor" instance=ExtResource( 11 )]
 script = ExtResource( 1 )
@@ -67,7 +68,10 @@ position = Vector2( 32, 24 )
 [node name="StairUp" parent="YSort" index="7" instance=ExtResource( 7 )]
 position = Vector2( 307, 55 )
 
-[node name="NoYSort" type="Node2D" parent="YSort" index="8"]
+[node name="Window" parent="YSort" index="8" instance=ExtResource( 14 )]
+position = Vector2( 160, 24 )
+
+[node name="NoYSort" type="Node2D" parent="YSort" index="9"]
 position = Vector2( -282, -254 )
 z_index = 1
 
