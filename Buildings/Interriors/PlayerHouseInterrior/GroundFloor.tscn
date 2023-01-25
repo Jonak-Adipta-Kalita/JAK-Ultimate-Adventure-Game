@@ -31,13 +31,16 @@ position = Vector2( 159, 166 )
 position = Vector2( 271, 72 )
 rotation = 1.5708
 
-[node name="BigTable" parent="YSort" index="0" instance=ExtResource( 4 )]
+[node name="Window" parent="YSort" index="0" instance=ExtResource( 14 )]
+position = Vector2( 160, 24 )
+
+[node name="BigTable" parent="YSort" index="1" instance=ExtResource( 4 )]
 position = Vector2( 81, 106 )
 
-[node name="Player" parent="YSort" index="1"]
+[node name="Player" parent="YSort" index="2"]
 position = Vector2( 160, 161 )
 
-[node name="Chairs" type="YSort" parent="YSort" index="2"]
+[node name="Chairs" type="YSort" parent="YSort" index="3"]
 position = Vector2( 18, -25 )
 
 [node name="ChairX" parent="YSort/Chairs" index="0" instance=ExtResource( 5 )]
@@ -62,21 +65,18 @@ frame = 3
 [node name="CollisionShape2D" parent="YSort/Chairs/ChairY2" index="1"]
 position = Vector2( 0.2, 2.5 )
 
-[node name="Candles" parent="YSort" index="3" instance=ExtResource( 12 )]
+[node name="Candles" parent="YSort" index="4" instance=ExtResource( 12 )]
 position = Vector2( 81, 98 )
 z_index = 1
 
-[node name="Painting" parent="YSort" index="4" instance=ExtResource( 2 )]
+[node name="Painting" parent="YSort" index="5" instance=ExtResource( 2 )]
 position = Vector2( 280, 24 )
 
-[node name="Clock" parent="YSort" index="5" instance=ExtResource( 6 )]
+[node name="Clock" parent="YSort" index="6" instance=ExtResource( 6 )]
 position = Vector2( 32, 24 )
 
-[node name="StairUp" parent="YSort" index="6" instance=ExtResource( 7 )]
+[node name="StairUp" parent="YSort" index="7" instance=ExtResource( 7 )]
 position = Vector2( 301, 61 )
-
-[node name="Window" parent="YSort" index="7" instance=ExtResource( 14 )]
-position = Vector2( 160, 24 )
 
 [node name="Area2D" type="Area2D" parent="YSort" index="8"]
 

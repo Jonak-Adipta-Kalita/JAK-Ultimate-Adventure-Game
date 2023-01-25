@@ -1,5 +1,8 @@
 extends Node2D
 
+func _ready():
+	PauseMenu.can_pause = false
+
 func _on_PlayButton_pressed():
 	SceneTransition.change_scene("res://MainScreens/Map.tscn")
 

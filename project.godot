@@ -17,6 +17,7 @@ config/icon="res://icon.png"
 [autoload]
 
 PlayerStats="*res://Player/PlayerStats.tscn"
+PauseMenu="*res://OtherScreens/PauseMenu.tscn"
 BackgroundMusic="*res://Music and Sounds/BackgroundMusic.tscn"
 SceneTransition="*res://Overlap/SceneTransition.tscn"
 DataManager="*res://Overlap/DataManager.gd"
