@@ -14,4 +14,4 @@ func _on_DoorCollider_body_entered(_body):
 
 	yield(get_tree().create_timer(0.3), "timeout")
 
-	var _change_scene_error = get_tree().change_scene(pathToInterrior)
+	SceneTransition.change_scene(pathToInterrior)

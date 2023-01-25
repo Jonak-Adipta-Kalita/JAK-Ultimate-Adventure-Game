@@ -1,4 +1,4 @@
-extends Node2D
+extends CanvasLayer
 
 onready var pauseAudioStreamPlayer = $PauseAudioStreamPlayer2D
 onready var menuMoveAudioStreamPlayer = $MenuMoveAudioStreamPlayer2D
