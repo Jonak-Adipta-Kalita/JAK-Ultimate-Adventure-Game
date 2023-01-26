@@ -5,7 +5,7 @@ var file_path = "Data.json"
 func check_for_file():
 	var file = File.new()
 	file.open(file_path, File.WRITE_READ)
-	file.store_string("{}")
+	file.store_string("{\"name\": \"Fox\"}")
 	file.close()
 
 func get_data() -> Dictionary:
@@ -27,6 +27,14 @@ func modify_data(key: String, value):
 	content[key] = value
 
 	set_data(content)
+
+func exists_data(key: String) -> bool:
+	var keys = Array(get_data().keys())
+
+	if key in keys:
+		return true
+
+	return false
 
 func _ready():
 	check_for_file()
