@@ -7,16 +7,17 @@ var updated_data = false
 
 func _ready():
 	PauseMenu.can_pause = true
-	if DataManager.exists_data("global_position"):
-		player.global_position = str2var(DataManager.get_data()["global_position"])
-		updated_data = true
-	else:
-		DataManager.modify_data("global_position", Vector2.ZERO)
-		updated_data = true
+
+	if not DataManager.exists_data("global_position"):
+		DataManager.modify_data("global_position", var2str(Vector2(90.4049, 345.182)))
+
+	player.global_position = str2var(DataManager.get_data()["global_position"])
+	updated_data = true
 
 func _process(_delta):
 	if updated_data:
 		DataManager.modify_data("global_position", var2str(player.global_position))
+
 	if get_tree().paused:
 		canvasLayer.visible = false
 	else:

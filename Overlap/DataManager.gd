@@ -4,6 +4,8 @@ var file_path = "Data.json"
 
 func check_for_file():
 	var file = File.new()
+	if file.file_exists(file_path):
+		return
 	file.open(file_path, File.WRITE_READ)
 	file.store_string("{\"name\": \"Fox\"}")
 	file.close()
