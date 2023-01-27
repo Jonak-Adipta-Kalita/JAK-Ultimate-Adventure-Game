@@ -17,6 +17,7 @@ var velocity = Vector2.ZERO
 var state = MOVE
 var roll_vector = Vector2.UP
 var stats = PlayerStats
+var data = DataManager.get_data()
 
 onready var animationTree = $AnimationTree
 onready var animationState = animationTree.get("parameters/playback")
@@ -38,7 +39,10 @@ func _physics_process(delta):
 			attack_state(delta)
 
 func move_state(delta):
-	var input_vector = Vector2.ZERO
+	if not DataManager.updated_data:
+		return
+
+	var input_vector = str2var(data["player"]["facing"])
 
 	input_vector.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
 	input_vector.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")

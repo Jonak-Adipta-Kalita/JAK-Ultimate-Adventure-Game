@@ -6,12 +6,10 @@ onready var player = $StopOnPause/GreenHaven/YSort/Player
 onready var waitForDataLoad = $WaitForDataLoad
 onready var waitForDataLoadAnimPlayer = $WaitForDataLoad/AnimationPlayer
 
-var updated_data = false
-
-func update_data():
+func update_data(global_position=Vector2(90.4049, 345.182), facing=Vector2.ZERO):
 	DataManager.modify_data("player", {
-		"global_position": var2str(Vector2(90.4049, 345.182)),
-		"facing": var2str(player.animationTree.get("parameters/Idle/blend_position"))
+		"global_position": var2str(global_position),
+		"facing": var2str(facing)
 	})
 
 func _ready():
@@ -22,7 +20,7 @@ func _ready():
 		update_data()
 
 	player.global_position = str2var(DataManager.get_data()["player"]["global_position"])
-	updated_data = true
+	DataManager.updated_data = true
 
 	waitForDataLoadAnimPlayer.play("Fade")
 	yield(waitForDataLoadAnimPlayer, "animation_finished")
@@ -30,8 +28,8 @@ func _ready():
 	waitForDataLoad.visible = false
 
 func _process(_delta):
-	if updated_data:
-		update_data()
+	if DataManager.updated_data:
+		update_data(player.global_position, player.animationTree.get("parameters/Idle/blend_position"))
 
 	if get_tree().paused:
 		canvasLayer.visible = false

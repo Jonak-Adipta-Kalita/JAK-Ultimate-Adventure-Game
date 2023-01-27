@@ -1,6 +1,7 @@
 extends Node2D
 
 var file_path = "Data.json"
+var updated_data = false
 
 func check_for_file():
 	var file = File.new()
