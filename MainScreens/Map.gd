@@ -6,7 +6,7 @@ onready var player = $StopOnPause/GreenHaven/YSort/Player
 onready var waitForDataLoad = $WaitForDataLoad
 onready var waitForDataLoadAnimPlayer = $WaitForDataLoad/AnimationPlayer
 
-func update_data(global_position=Vector2(90.4049, 345.182), facing=Vector2.ZERO):
+func update_data(global_position=Vector2(90.4049, 345.182), facing=Vector2.DOWN):
 	DataManager.modify_data("player", {
 		"global_position": var2str(global_position),
 		"facing": var2str(facing)

@@ -15,7 +15,7 @@ enum {
 
 var velocity = Vector2.ZERO
 var state = MOVE
-var roll_vector = Vector2.UP
+var roll_vector
 var stats = PlayerStats
 var data = DataManager.get_data()
 
@@ -29,7 +29,8 @@ func _ready():
 	var input_vector = str2var(data["player"]["facing"])
 
 	animationTree.active = true
-	swordHitbox.knockback_vector = roll_vector
+	roll_vector = input_vector
+	swordHitbox.knockback_vector = input_vector
 	animationTree.set("parameters/Idle/blend_position", input_vector)
 	animationTree.set("parameters/Run/blend_position", input_vector)
 	animationTree.set("parameters/Attack/blend_position", input_vector)
