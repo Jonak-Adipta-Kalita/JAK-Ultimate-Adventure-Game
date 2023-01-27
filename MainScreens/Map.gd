@@ -8,14 +8,20 @@ onready var waitForDataLoadAnimPlayer = $WaitForDataLoad/AnimationPlayer
 
 var updated_data = false
 
+func update_data():
+	DataManager.modify_data("player", {
+		"global_position": var2str(Vector2(90.4049, 345.182)),
+		"facing": var2str(player.animationTree.get("parameters/Idle/blend_position"))
+	})
+
 func _ready():
 	waitForDataLoad.visible = true
 	PauseMenu.can_pause = true
 
-	if not DataManager.exists_data("global_position"):
-		DataManager.modify_data("global_position", var2str(Vector2(90.4049, 345.182)))
+	if not DataManager.exists_data("player"):
+		update_data()
 
-	player.global_position = str2var(DataManager.get_data()["global_position"])
+	player.global_position = str2var(DataManager.get_data()["player"]["global_position"])
 	updated_data = true
 
 	waitForDataLoadAnimPlayer.play("Fade")
@@ -25,7 +31,7 @@ func _ready():
 
 func _process(_delta):
 	if updated_data:
-		DataManager.modify_data("global_position", var2str(player.global_position))
+		update_data()
 
 	if get_tree().paused:
 		canvasLayer.visible = false
