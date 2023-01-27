@@ -19,7 +19,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 24.5, 4 )
 
-[node name="GroundFloor" instance=ExtResource( 11 )]
+[node name="PlayerHouseInterrior_GroundFloor" instance=ExtResource( 11 )]
 script = ExtResource( 1 )
 
 [node name="Background" parent="." index="0" instance=ExtResource( 3 )]

@@ -16,6 +16,8 @@ func _ready():
 	waitForDataLoad.visible = true
 	PauseMenu.can_pause = true
 
+	DataManager.modify_data("location", "overworld")
+
 	if not DataManager.exists_data("player"):
 		update_data()
 
