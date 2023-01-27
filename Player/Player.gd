@@ -26,8 +26,14 @@ onready var hurtbox = $HurtBox
 
 func _ready():
 	var _player_stats_connect = stats.connect("no_health", self, "queue_free")
+	var input_vector = str2var(data["player"]["facing"])
+
 	animationTree.active = true
 	swordHitbox.knockback_vector = roll_vector
+	animationTree.set("parameters/Idle/blend_position", input_vector)
+	animationTree.set("parameters/Run/blend_position", input_vector)
+	animationTree.set("parameters/Attack/blend_position", input_vector)
+	animationTree.set("parameters/Roll/blend_position", input_vector)
 
 func _physics_process(delta):
 	match state:
@@ -42,7 +48,7 @@ func move_state(delta):
 	if not DataManager.updated_data:
 		return
 
-	var input_vector = str2var(data["player"]["facing"])
+	var input_vector = Vector2.ZERO
 
 	input_vector.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
 	input_vector.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
