@@ -9,5 +9,6 @@ max_health = 10
 
 [node name="NoHealthTimer" type="Timer" parent="." index="0"]
 
+[connection signal="health_changed" from="." to="." method="_on_PlayerStats_health_changed"]
 [connection signal="no_health" from="." to="." method="_on_PlayerStats_no_health"]
 [connection signal="timeout" from="NoHealthTimer" to="." method="_on_NoHealthTimer_timeout"]

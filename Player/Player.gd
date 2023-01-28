@@ -26,6 +26,9 @@ onready var hurtbox = $HurtBox
 
 func _ready():
 	var _player_stats_connect = stats.connect("no_health", self, "queue_free")
+	while not DataManager.updated_data:
+		yield(get_tree().create_timer(0.1), "timeout")
+
 	var input_vector = str2var(data["player"]["facing"])
 
 	animationTree.active = true
@@ -35,6 +38,7 @@ func _ready():
 	animationTree.set("parameters/Run/blend_position", input_vector)
 	animationTree.set("parameters/Attack/blend_position", input_vector)
 	animationTree.set("parameters/Roll/blend_position", input_vector)
+	PlayerStats.health = data["player"]["health"]
 
 func _physics_process(delta):
 	match state:

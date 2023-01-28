@@ -39,5 +39,21 @@ func exists_data(key: String) -> bool:
 
 	return false
 
+class ModifyData:
+	static func player_data(
+		global_pos: Vector2 = Vector2(90.4049, 345.182),
+		facing: Vector2 = Vector2.DOWN,
+		health: int = 10,
+		location: String = "overworld"
+	):
+		DataManager.modify_data("player",
+			{
+				"global_position": var2str(global_pos),
+				"facing": var2str(facing),
+				"location": location,
+				"health": health
+			}
+		)
+
 func _ready():
 	check_for_file()
