@@ -2,6 +2,7 @@ extends Node2D
 
 var file_path = "Data.json"
 var updated_data = false
+var is_updating_ext_g_pos = false
 
 func check_for_file():
 	var file = File.new()
@@ -44,16 +45,28 @@ class ModifyData:
 		global_pos: Vector2 = Vector2(90.4049, 345.182),
 		facing: Vector2 = Vector2.DOWN,
 		health: int = PlayerStats.max_health,
-		location: String = "overworld"
+		location: String = "overworld",
+		buildingexterior_global_pos=null
 	):
-		DataManager.modify_data("player",
-			{
+		var new_data: Dictionary = {}
+
+		if buildingexterior_global_pos:
+			new_data = {
+				"global_position": var2str(global_pos),
+				"facing": var2str(facing),
+				"location": location,
+				"health": health,
+				"buildingexterior_global_pos": var2str(buildingexterior_global_pos)
+			}
+		else:
+			new_data = {
 				"global_position": var2str(global_pos),
 				"facing": var2str(facing),
 				"location": location,
 				"health": health
 			}
-		)
+
+		DataManager.modify_data("player", new_data)
 
 func _ready():
 	check_for_file()

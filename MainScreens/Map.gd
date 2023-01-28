@@ -22,7 +22,7 @@ func _ready():
 	waitForDataLoad.visible = false
 
 func _process(_delta):
-	if DataManager.updated_data:
+	if DataManager.updated_data and not DataManager.is_updating_ext_g_pos:
 		if PlayerStats.health != 0:
 			DataManager.ModifyData.player_data(
 				player.global_position,

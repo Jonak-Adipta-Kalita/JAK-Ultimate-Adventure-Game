@@ -1,6 +1,6 @@
 extends Node2D
 
-var location: String = DataManager.get_data()["player"]["location"]
+var location: String = DataManager.get_data()["player"]["location"] if "player" in Array(DataManager.get_data().keys()) else "overworld"
 
 func _ready():
 	PauseMenu.can_pause = false

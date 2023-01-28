@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Buildings/Interriors/PlayerHouseInterrior/GroundFloor.gd" type="Script" id=1]
 [ext_resource path="res://Buildings/Interriors/Objects/Painting.tscn" type="PackedScene" id=2]
@@ -15,9 +15,6 @@
 [ext_resource path="res://Buildings/Interriors/Objects/Carpet.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Buildings/Interriors/Objects/Window.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Buildings/Interriors/Objects/Couch.tscn" type="PackedScene" id=15]
-
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 24.5, 4 )
 
 [node name="PlayerHouseInterrior_GroundFloor" instance=ExtResource( 11 )]
 script = ExtResource( 1 )
@@ -78,29 +75,22 @@ position = Vector2( 32, 24 )
 [node name="StairUp" parent="YSort" index="7" instance=ExtResource( 7 )]
 position = Vector2( 301, 61 )
 
-[node name="Area2D" type="Area2D" parent="YSort" index="8"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Area2D" index="0"]
-position = Vector2( 160.5, 176 )
-shape = SubResource( 1 )
-
-[node name="Couch" parent="YSort" index="9" instance=ExtResource( 15 )]
+[node name="Couch" parent="YSort" index="8" instance=ExtResource( 15 )]
 position = Vector2( 296, 128 )
 
-[node name="SmallTable" parent="YSort" index="10" instance=ExtResource( 10 )]
+[node name="SmallTable" parent="YSort" index="9" instance=ExtResource( 10 )]
 position = Vector2( 249, 131 )
 
 [node name="FlowerPot" parent="YSort/SmallTable" index="2" instance=ExtResource( 8 )]
 position = Vector2( -176.154, -61.5385 )
 
-[node name="SmallTable2" parent="YSort" index="11" instance=ExtResource( 10 )]
+[node name="SmallTable2" parent="YSort" index="10" instance=ExtResource( 10 )]
 position = Vector2( 249, 131 )
 
 [node name="FlowerPot" parent="YSort/SmallTable2" index="2" instance=ExtResource( 8 )]
 position = Vector2( -176.154, 20 )
 
 [connection signal="go_up" from="YSort/StairUp" to="." method="_on_StairUp_go_up"]
-[connection signal="body_entered" from="YSort/Area2D" to="." method="_on_Area2D_body_entered"]
 
 [editable path="YSort/Chairs/ChairX2"]
 [editable path="YSort/Chairs/ChairY2"]
