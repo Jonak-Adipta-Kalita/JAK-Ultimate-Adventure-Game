@@ -11,6 +11,8 @@ func _ready():
 		"buildinginterrior-" + name
 	)
 
+	DataManager.updated_data = true
+
 func _process(_delta):
 	if DataManager.updated_data and PlayerStats.health != 0:
 		DataManager.ModifyData.player_data(
