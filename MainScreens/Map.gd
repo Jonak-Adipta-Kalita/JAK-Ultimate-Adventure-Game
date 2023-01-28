@@ -22,12 +22,20 @@ func _ready():
 	waitForDataLoad.visible = false
 
 func _process(_delta):
-	if DataManager.updated_data and PlayerStats.health != 0:
-		DataManager.ModifyData.player_data(
-			player.global_position,
-			player.animationTree.get("parameters/Idle/blend_position"),
-			PlayerStats.health
-		)
+	if DataManager.updated_data:
+		if PlayerStats.health != 0:
+			DataManager.ModifyData.player_data(
+				player.global_position,
+				player.animationTree.get("parameters/Idle/blend_position"),
+				PlayerStats.health
+			)
+		else:
+			var current_data = DataManager.get_data()
+			DataManager.ModifyData.player_data(
+				str2var(current_data["player"]["global_position"]),
+				str2var(current_data["player"]["facing"]),
+				PlayerStats.health
+			)
 	if get_tree().paused:
 		canvasLayer.visible = false
 	else:

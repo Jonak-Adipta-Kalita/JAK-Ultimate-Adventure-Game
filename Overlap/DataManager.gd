@@ -43,7 +43,7 @@ class ModifyData:
 	static func player_data(
 		global_pos: Vector2 = Vector2(90.4049, 345.182),
 		facing: Vector2 = Vector2.DOWN,
-		health: int = 10,
+		health: int = PlayerStats.max_health,
 		location: String = "overworld"
 	):
 		DataManager.modify_data("player",
