@@ -3,14 +3,13 @@ extends StaticBody2D
 onready var door = $Door
 onready var doorAnimationPlayer = $Door/AnimationPlayer
 onready var player = get_node("/root/Map/StopOnPause/GreenHaven/YSort/Player")
-onready var doorColliderChecker = $DoorColliderChecker
 
 export(String) var pathToInterrior = ""
 
 func _ready():
 	door.visible = false
 
-func _on_DoorColliderChecker_body_entered(_body):
+func _on_DoorCollider_body_entered(_body):
 	DataManager.is_updating_ext_g_pos = true
 
 	DataManager.ModifyData.player_data(
@@ -18,10 +17,8 @@ func _on_DoorColliderChecker_body_entered(_body):
 		player.animationTree.get("parameters/Idle/blend_position"),
 		PlayerStats.health,
 		"overworld",
-		player.global_position
+		player.global_position + Vector2(0, 10)
 	)
-
-func _on_DoorCollider_body_entered(_body):
 	door.visible = true
 	doorAnimationPlayer.play("OpenDoor")
 
