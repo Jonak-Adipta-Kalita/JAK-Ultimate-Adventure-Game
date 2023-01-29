@@ -26,7 +26,7 @@ onready var hurtbox = $HurtBox
 
 func _ready():
 	var _player_stats_connect = stats.connect("no_health", self, "queue_free")
-	while not DataManager.updated_data and "player" in Array(DataManager.get_data().keys()):
+	while not DataManager.updated_data and not "player" in Array(DataManager.get_data().keys()):
 		yield(get_tree().create_timer(0.1), "timeout")
 
 	var input_vector = str2var(data["player"]["facing"])
