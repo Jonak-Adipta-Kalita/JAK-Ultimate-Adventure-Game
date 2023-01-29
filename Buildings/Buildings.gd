@@ -11,7 +11,6 @@ func _ready():
 
 func _on_DoorCollider_body_entered(_body):
 	DataManager.is_updating_ext_g_pos = true
-
 	DataManager.ModifyData.player_data(
 		player.global_position,
 		player.animationTree.get("parameters/Idle/blend_position"),
@@ -19,6 +18,7 @@ func _on_DoorCollider_body_entered(_body):
 		"overworld",
 		player.global_position + Vector2(0, 10)
 	)
+
 	door.visible = true
 	doorAnimationPlayer.play("OpenDoor")
 
