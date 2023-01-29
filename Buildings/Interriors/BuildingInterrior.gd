@@ -14,7 +14,7 @@ func _ready():
 			Vector2.UP,
 			PlayerStats.health,
 			"buildinginterrior-" + name,
-			current_data["player"]["buildingexterior_global_pos"]
+			str2var(current_data["player"]["buildingexterior_global_pos"])
 		)
 	else:
 		player.global_position = str2var(current_data["player"]["global_position"])
@@ -28,8 +28,8 @@ func _process(_delta):
 			player.animationTree.get("parameters/Idle/blend_position"),
 			PlayerStats.health,
 			"buildinginterrior-" + name,
-			current_data["player"]["buildingexterior_global_pos"]
+			str2var(current_data["player"]["buildingexterior_global_pos"])
 		)
 
 func _on_Area2D_body_entered(_body):
-	pass
+	SceneTransition.change_scene("res://MainScreens/Map.tscn")

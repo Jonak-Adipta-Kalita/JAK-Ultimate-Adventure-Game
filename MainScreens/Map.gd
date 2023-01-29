@@ -13,7 +13,10 @@ func _ready():
 	if not DataManager.exists_data("player"):
 		DataManager.ModifyData.player_data()
 
-	player.global_position = str2var(DataManager.get_data()["player"]["global_position"])
+	if "buildingexterior_global_pos" in Array(DataManager.get_data()["player"].keys()):
+		player.global_position = str2var(DataManager.get_data()["player"]["buildingexterior_global_pos"])
+	else:
+		player.global_position = str2var(DataManager.get_data()["player"]["global_position"])
 	DataManager.updated_data = true
 
 	waitForDataLoadAnimPlayer.play("Fade")

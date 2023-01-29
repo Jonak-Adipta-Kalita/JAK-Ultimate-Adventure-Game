@@ -35,7 +35,7 @@ position = Vector2( 160, 24 )
 position = Vector2( 81, 106 )
 
 [node name="Player" parent="YSort" index="2"]
-position = Vector2( 160, 161 )
+position = Vector2( 160, 154.875 )
 
 [node name="Chairs" type="YSort" parent="YSort" index="3"]
 position = Vector2( 18, -25 )
