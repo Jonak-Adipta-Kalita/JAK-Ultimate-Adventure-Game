@@ -5,12 +5,13 @@ onready var current_data = DataManager.get_data()
 
 func _ready():
 	PauseMenu.can_pause = true
+	DataManager.is_changing_floor = false
 	DataManager.is_updating_ext_g_pos = false
 
 	while not "buildingexterior_global_pos" in Array(current_data["player"].keys()):
 		yield(get_tree().create_timer(0.1), "timeout")
 
-	if not current_data["player"]["location"].begins_with("buildinginterrior-"):
+	if current_data["player"]["location"] != name:
 		DataManager.ModifyData.player_data(
 			player.global_position,
 			Vector2.UP,
@@ -24,7 +25,7 @@ func _ready():
 	DataManager.updated_data = true
 
 func _process(_delta):
-	if DataManager.updated_data and PlayerStats.health != 0:
+	if DataManager.updated_data and PlayerStats.health != 0 and not DataManager.is_changing_floor:
 		DataManager.ModifyData.player_data(
 			player.global_position,
 			player.animationTree.get("parameters/Idle/blend_position"),
