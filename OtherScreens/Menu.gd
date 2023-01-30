@@ -1,17 +1,18 @@
 extends Node2D
 
-var location: String = DataManager.get_data()["player"]["location"] if "player" in Array(DataManager.get_data().keys()) else "overworld"
 
 func _ready():
 	PauseMenu.can_pause = false
 
 func _on_PlayButton_pressed():
+	var data = DataManager.get_data()
+	var location: String = data["player"]["location"] if "player" in Array(DataManager.get_data().keys()) else "overworld"
 	var change_scene_to = ""
 
 	if location == "overworld":
 		change_scene_to = "res://MainScreens/Map.tscn"
-	elif location.begins_with("buildinginterrior"):
-		change_scene_to = "res://Buildings/Interriors/" + "/".join(location.split("-")[1].split("_")) + ".tscn"
+	elif location.begins_with("buildinginterrior-"):
+		change_scene_to = "res://Buildings/Interriors/" + location.split("-")[1] + "/" + data["player"]["floor"] + ".tscn"
 
 	SceneTransition.change_scene(change_scene_to)
 

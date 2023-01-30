@@ -49,7 +49,8 @@ class ModifyData:
 		facing: Vector2 = Vector2.DOWN,
 		health: int = PlayerStats.max_health,
 		location: String = "overworld",
-		buildingexterior_global_pos: Vector2 = Vector2.ZERO
+		buildingexterior_global_pos: Vector2 = Vector2.ZERO,
+		_floor = "GroundFloor"
 	):
 		var new_data: Dictionary = {}
 
@@ -59,7 +60,8 @@ class ModifyData:
 				"facing": var2str(facing),
 				"location": location,
 				"health": health,
-				"buildingexterior_global_pos": var2str(buildingexterior_global_pos)
+				"buildingexterior_global_pos": var2str(buildingexterior_global_pos),
+				"floor": _floor
 			}
 		else:
 			new_data = {
