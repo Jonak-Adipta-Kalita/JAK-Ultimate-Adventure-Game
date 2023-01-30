@@ -8,6 +8,7 @@ onready var waitForDataLoadAnimPlayer = $WaitForDataLoad/AnimationPlayer
 
 func _ready():
 	waitForDataLoad.visible = true
+	DataManager.inside_house = false
 	PauseMenu.can_pause = true
 
 	if not DataManager.exists_data("player"):

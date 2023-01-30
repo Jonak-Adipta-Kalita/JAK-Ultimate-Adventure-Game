@@ -5,6 +5,7 @@ var file_path = "Data.json"
 var updated_data = false
 var is_updating_ext_g_pos = false
 var is_changing_floor = false
+var inside_house = false
 
 func check_for_file():
 	var file = File.new()
