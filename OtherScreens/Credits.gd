@@ -9,5 +9,5 @@ func _process(_delta):
 	if Input.is_action_pressed("ui_cancel"):
 		change_scene()
 
-func _on_TextureButton_pressed():
+func _on_CancelButton_pressed():
 	change_scene()

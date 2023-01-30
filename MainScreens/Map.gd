@@ -7,6 +7,7 @@ onready var waitForDataLoad = $WaitForDataLoad
 onready var waitForDataLoadAnimPlayer = $WaitForDataLoad/AnimationPlayer
 
 func _ready():
+	print(Vector2.DOWN)
 	waitForDataLoad.visible = true
 	PauseMenu.can_pause = true
 

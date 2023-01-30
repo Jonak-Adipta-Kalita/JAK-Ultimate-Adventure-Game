@@ -17,7 +17,6 @@ var velocity = Vector2.ZERO
 var state = MOVE
 var roll_vector
 var stats = PlayerStats
-var data = DataManager.get_data()
 
 onready var animationTree = $AnimationTree
 onready var animationState = animationTree.get("parameters/playback")
@@ -26,9 +25,11 @@ onready var hurtbox = $HurtBox
 
 func _ready():
 	var _player_stats_connect = stats.connect("no_health", self, "queue_free")
-	while not DataManager.updated_data and not "player" in Array(DataManager.get_data().keys()):
+
+	while (not DataManager.updated_data) and (not "player" in Array(DataManager.get_data().keys())):
 		yield(get_tree().create_timer(0.1), "timeout")
 
+	var data = DataManager.get_data()
 	var input_vector = str2var(data["player"]["facing"])
 
 	animationTree.active = true
