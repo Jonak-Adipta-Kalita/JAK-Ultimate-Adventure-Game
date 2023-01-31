@@ -55,6 +55,9 @@ position = Vector2( 160, 90 )
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="StopOnPause/GreenHaven/YSort/Player"]
 remote_path = NodePath("../../../Camera")
 
+[node name="Lab" parent="StopOnPause/GreenHaven/YSort/Buildings" index="1"]
+pathToInterrior = "res://Buildings/Interriors/LabInterrior/GroundFloor.tscn"
+
 [node name="Camera" parent="StopOnPause/GreenHaven" instance=ExtResource( 4 )]
 
 [node name="TopLeft" parent="StopOnPause/GreenHaven/Camera/Limits" index="0"]
