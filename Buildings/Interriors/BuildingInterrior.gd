@@ -22,12 +22,11 @@ func _ready():
 	while not "buildingexterior_global_pos" in Array(current_data["player"].keys()):
 		yield(get_tree().create_timer(0.1), "timeout")
 
-	modify_player_data()
-
-#	if current_data["player"]["location"] != "buildinginterrior-" + name.split("_")[0]:
-#		modify_player_data()
-#	else:
-#		player.global_position = str2var(current_data["player"]["global_position"])
+	if current_data["player"]["location"] == "buildinginterrior-" + name.split("_")[0]:
+		if current_data["player"]["floor"] != name.split("_")[1]:
+			modify_player_data(str2var(current_data["player"]["facing"]))
+		else:
+			player.global_position = str2var(current_data["player"]["global_position"])
 
 	DataManager.updated_data = true
 
