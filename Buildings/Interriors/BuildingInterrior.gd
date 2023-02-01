@@ -2,6 +2,7 @@ extends Node2D
 
 onready var player = $YSort/Player
 onready var current_data = DataManager.get_data()
+onready var stair_carpet = $StairCarpet
 
 func modify_player_data(facing=Vector2.UP):
 	DataManager.ModifyData.player_data(
@@ -24,6 +25,9 @@ func _ready():
 
 	if current_data["player"]["location"] == "buildinginterrior-" + name.split("_")[0]:
 		if current_data["player"]["floor"] != name.split("_")[1]:
+			if current_data["player"]["floor"] != "GroundFloor":
+				player.global_position = stair_carpet.global_position + Vector2(-5, 0)
+
 			modify_player_data(str2var(current_data["player"]["facing"]))
 		else:
 			player.global_position = str2var(current_data["player"]["global_position"])
