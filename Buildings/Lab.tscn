@@ -12,6 +12,7 @@ extents = Vector2( 57.3333, 22.6667 )
 [node name="Lab" type="StaticBody2D"]
 collision_mask = 65
 script = ExtResource( 4 )
+pathToInterrior = "res://Buildings/Interriors/LabInterrior/GroundFloor.tscn"
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 0, -10 )
