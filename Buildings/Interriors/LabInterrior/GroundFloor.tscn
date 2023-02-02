@@ -25,6 +25,12 @@ position = Vector2( 0, -105.09 )
 [node name="BottomRight" parent="Background/Camera/Limits" index="1"]
 position = Vector2( 320, 179.91 )
 
+[node name="StaticBody2D" type="StaticBody2D" parent="Background" index="2"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Background/StaticBody2D" index="0"]
+position = Vector2( 0, -8 )
+polygon = PoolVector2Array( -0.0078125, -97.1016, 0, 180, 107, 180, 136, 180, 136, 188, 185, 188, 185, 180, 320, 180, 320.015, -97.1, 328, -97.1, 326, 181, 326, 190, 191, 191, 191, 205, 123, 204, 122, 188, -9, 187, -8.02344, -97.0859 )
+
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="YSort/Player" index="8"]
 remote_path = NodePath("../../../Background/Camera")
 
