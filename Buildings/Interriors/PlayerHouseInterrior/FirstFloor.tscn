@@ -2,15 +2,15 @@
 
 [ext_resource path="res://Buildings/Interriors/PlayerHouseInterrior/Background.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Buildings/Interriors/PlayerHouseInterrior/Objects/StairDown.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Buildings/Interriors/PlayerHouseInterrior/Objects/Carpet.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Buildings/Interriors/Objects/StairDown.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Buildings/Interriors/Objects/Carpet.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Buildings/Interriors/PlayerHouseInterrior/FirstFloor.gd" type="Script" id=5]
-[ext_resource path="res://Buildings/Interriors/PlayerHouseInterrior/Objects/Window.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Buildings/Interriors/PlayerHouseInterrior/Objects/Bed.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Buildings/Interriors/PlayerHouseInterrior/Objects/Drawer1.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Buildings/Interriors/PlayerHouseInterrior/Objects/Drawer2.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Buildings/Interriors/PlayerHouseInterrior/Objects/Sink&KitchenTable.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Buildings/Interriors/PlayerHouseInterrior/Objects/TV.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Buildings/Interriors/Objects/Window.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Buildings/Interriors/Objects/Bed.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Buildings/Interriors/Objects/Drawer1.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Buildings/Interriors/Objects/Drawer2.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Buildings/Interriors/Objects/Sink&KitchenTable.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Buildings/Interriors/Objects/TV.tscn" type="PackedScene" id=11]
 
 [node name="PlayerHouseInterrior_FirstFloor" type="Node2D"]
 script = ExtResource( 5 )
