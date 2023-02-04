@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Buildings/Interriors/BuildingInterrior.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Tiles/LabFloorTile.png" type="Texture" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Buildings/Interriors/Objects/Clock.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Buildings/Interriors/Objects/LabTable.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Buildings/Interriors/Objects/Computer.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Buildings/Interriors/Objects/Dustbin.tscn" type="PackedScene" id=10]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 152, 33.8148 )
@@ -109,5 +110,8 @@ scale = Vector2( 1.7, -1.7 )
 [node name="Computer" parent="YSort/LabTable4" index="2" instance=ExtResource( 9 )]
 position = Vector2( 7.48481, -5.32343 )
 scale = Vector2( 0.765, 0.765 )
+
+[node name="Dustbin" parent="YSort" index="8" instance=ExtResource( 10 )]
+position = Vector2( 310.358, 157.75 )
 
 [editable path="Background/Camera"]
