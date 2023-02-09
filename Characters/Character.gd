@@ -3,7 +3,7 @@ extends StaticBody2D
 var can_interract = false
 
 func interract():
-	pass
+	MessageBox.send_message("Hello!!")
 
 func _on_Area2D_body_entered(_body):
 	can_interract = true
