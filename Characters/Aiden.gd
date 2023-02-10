@@ -4,17 +4,13 @@ var can_interract = false
 
 func interract():
 	if not "aiden" in DataManager.get_data():
-		DataManager.modify_data("aiden", {
-			"phase": 1
-		})
+		DataManager.ModifyData.aiden_data(1)
 
 	var phase: int = DataManager.get_data()["aiden"]["phase"]
 
 	if phase == 1:
 		MessageBox.send_message("Hello %s, I am Aiden, I will be your partner in this Adventure." %  DataManager.get_data()["name"])
-		DataManager.modify_data("aiden", {
-			"phase": 2
-		})
+		DataManager.ModifyData.aiden_data(2)
 	elif phase == 2:
 		MessageBox.send_message(" Can you do the following: 1) Kill 50 Bats, 2) Collect 100 ExP")
 

@@ -74,6 +74,11 @@ class ModifyData:
 			}
 
 		DataManager.modify_data("player", new_data)
+	
+	static func aiden_data(phase: int):
+		DataManager.modify_data("aiden", {
+			"phase": phase
+		})
 
 func _ready():
 	check_for_file()
