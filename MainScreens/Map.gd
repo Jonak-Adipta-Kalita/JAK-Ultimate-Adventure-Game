@@ -33,7 +33,7 @@ func _process(_delta):
 				player.global_position,
 				player.animationTree.get("parameters/Idle/blend_position"),
 				PlayerStats.health,
-				current_data["player"]["location"],
+				"overworld",
 				current_data["player"]["bats_killed"],
 				current_data["player"]["exp"]
 			)
@@ -42,7 +42,7 @@ func _process(_delta):
 				str2var(current_data["player"]["global_position"]),
 				str2var(current_data["player"]["facing"]),
 				PlayerStats.health,
-				current_data["player"]["location"],
+				"overworld",
 				current_data["player"]["bats_killed"],
 				current_data["player"]["exp"]
 			)

@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
 const EnemyDeathEffect = preload("res://Effects/EnemyDeathEffect.tscn")
+const ExP = 5.0
 
 export(int) var MAX_SPEED = 50
 export(int) var ACCELERATION = 200
@@ -84,6 +85,29 @@ func _on_HurtBox_area_entered(area):
 	hurtbox.create_hit_effect()
 
 func _on_Stats_no_health():
+	var player_data = DataManager.get_data()["player"]
+
+	if "buildingexterior_global_pos" in Array(player_data.keys()):
+		DataManager.ModifyData.player_data(
+			str2var(player_data["global_position"]),
+			str2var(player_data["facing"]),
+			PlayerStats.max_health,
+			player_data["location"],
+			player_data["bats_killed"] + 1,
+			player_data["exp"] + ExP,
+			str2var(player_data["buildingexterior_global_pos"]),
+			player_data["floor"]
+		)
+	else:
+		DataManager.ModifyData.player_data(
+			str2var(player_data["global_position"]),
+			str2var(player_data["facing"]),
+			PlayerStats.max_health,
+			player_data["location"],
+			player_data["bats_killed"] + 1,
+			player_data["exp"] + ExP
+		)
+
 	queue_free()
 
 	var enemyDeathEffect = EnemyDeathEffect.instance()
