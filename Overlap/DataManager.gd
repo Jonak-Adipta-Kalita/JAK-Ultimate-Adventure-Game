@@ -12,12 +12,9 @@ func check_for_file():
 	if file.file_exists(file_path):
 		return
 	file.open(file_path, File.WRITE_READ)
-	file.store_string(JSON.print(
-		{
-			"name": "Fox",
-			"phase": 1
-		}
-	))
+	file.store_string(JSON.print({
+		"name": "Fox"
+	}))
 	file.close()
 
 func get_data() -> Dictionary:
