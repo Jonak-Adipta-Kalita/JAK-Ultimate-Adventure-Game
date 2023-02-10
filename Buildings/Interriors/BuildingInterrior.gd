@@ -17,10 +17,10 @@ func modify_player_data(facing=Vector2.UP):
 
 func _ready():
 	PauseMenu.can_pause = true
+	ActiveTasks.can_be_viewed = true
 	DataManager.inside_house = true
 	DataManager.is_changing_floor = false
 	DataManager.is_updating_ext_g_pos = false
-
 
 	while not "buildingexterior_global_pos" in Array(current_data["player"].keys()):
 		yield(get_tree().create_timer(0.1), "timeout")

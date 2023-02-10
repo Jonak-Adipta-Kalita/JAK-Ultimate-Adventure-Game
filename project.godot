@@ -138,6 +138,7 @@ PlayerStats="*res://Player/PlayerStats.tscn"
 PauseMenu="*res://OtherScreens/PauseMenu.tscn"
 BackgroundMusic="*res://Music and Sounds/BackgroundMusic.tscn"
 MessageBox="*res://OtherScreens/MessageBox.tscn"
+ActiveTasks="*res://OtherScreens/ActiveTasks.tscn"
 SceneTransition="*res://Overlap/SceneTransition.tscn"
 DataManager="*res://Overlap/DataManager.gd"
 

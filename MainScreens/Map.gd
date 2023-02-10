@@ -24,6 +24,7 @@ func _ready():
 	yield(waitForDataLoadAnimPlayer, "animation_finished")
 
 	waitForDataLoad.visible = false
+	ActiveTasks.can_be_viewed = true
 
 func _process(_delta):
 	if DataManager.updated_data and not DataManager.is_updating_ext_g_pos:

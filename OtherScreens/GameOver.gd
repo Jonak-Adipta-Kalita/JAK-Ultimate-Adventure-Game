@@ -2,6 +2,7 @@ extends Node2D
 
 func _ready():
 	PauseMenu.can_pause = false
+	ActiveTasks.can_be_viewed = false
 
 func _on_RetryButton_pressed():
 	var current_data = DataManager.get_data()

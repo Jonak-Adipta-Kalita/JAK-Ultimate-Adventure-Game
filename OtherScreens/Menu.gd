@@ -1,8 +1,8 @@
 extends Node2D
 
-
 func _ready():
 	PauseMenu.can_pause = false
+	ActiveTasks.can_be_viewed = false
 
 func _on_PlayButton_pressed():
 	var data = DataManager.get_data()
