@@ -10,12 +10,15 @@ func _ready():
 	door.visible = false
 
 func _on_DoorCollider_body_entered(_body):
+	var current_data = DataManager.get_data()
 	DataManager.is_updating_ext_g_pos = true
 	DataManager.ModifyData.player_data(
 		player.global_position,
 		player.animationTree.get("parameters/Idle/blend_position"),
 		PlayerStats.health,
 		"overworld",
+		current_data["player"]["bats_killed"],
+		current_data["player"]["exp"],
 		player.global_position + Vector2(0, 10)
 	)
 

@@ -51,6 +51,8 @@ class ModifyData:
 		facing: Vector2 = Vector2.DOWN,
 		health: int = PlayerStats.max_health,
 		location: String = "overworld",
+		bats_killed: int = 0,
+		_exp: float = 0,
 		buildingexterior_global_pos: Vector2 = Vector2.ZERO,
 		_floor = "GroundFloor"
 	):
@@ -62,6 +64,8 @@ class ModifyData:
 				"facing": var2str(facing),
 				"location": location,
 				"health": health,
+				"bats_killed": bats_killed,
+				"exp": _exp,
 				"buildingexterior_global_pos": var2str(buildingexterior_global_pos),
 				"floor": _floor
 			}
@@ -70,7 +74,9 @@ class ModifyData:
 				"global_position": var2str(global_pos),
 				"facing": var2str(facing),
 				"location": location,
-				"health": health
+				"health": health,
+				"bats_killed": bats_killed,
+				"exp": _exp,
 			}
 
 		DataManager.modify_data("player", new_data)

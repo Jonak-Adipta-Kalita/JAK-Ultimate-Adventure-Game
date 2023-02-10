@@ -27,18 +27,24 @@ func _ready():
 
 func _process(_delta):
 	if DataManager.updated_data and not DataManager.is_updating_ext_g_pos:
+		var current_data = DataManager.get_data()
 		if PlayerStats.health != 0:
 			DataManager.ModifyData.player_data(
 				player.global_position,
 				player.animationTree.get("parameters/Idle/blend_position"),
-				PlayerStats.health
+				PlayerStats.health,
+				current_data["player"]["location"],
+				current_data["player"]["bats_killed"],
+				current_data["player"]["exp"]
 			)
 		else:
-			var current_data = DataManager.get_data()
 			DataManager.ModifyData.player_data(
 				str2var(current_data["player"]["global_position"]),
 				str2var(current_data["player"]["facing"]),
-				PlayerStats.health
+				PlayerStats.health,
+				current_data["player"]["location"],
+				current_data["player"]["bats_killed"],
+				current_data["player"]["exp"]
 			)
 	if get_tree().paused:
 		canvasLayer.visible = false
