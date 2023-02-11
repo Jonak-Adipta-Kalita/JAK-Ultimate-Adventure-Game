@@ -27,10 +27,10 @@ func _process(_delta):
 		doneTask2.visible = false
 		if player_data["bats_killed"] == 50:
 			doneTask1.visible = true
-		if player_data["exp"] == 100.0:
+		if player_data["exp"] == 250:
 			doneTask1.visible = true
 		
-		if player_data["bats_killed"] >= 50 and player_data["exp"] >= 100.0:
+		if player_data["bats_killed"] >= 50 and player_data["exp"] >= 250:
 			doneTask1.visible = false
 			doneTask2.visible = false
 			task1.text = "Go back to Aiden!!"
@@ -39,6 +39,6 @@ func _process(_delta):
 			return
 
 		task1.text = "1) %s" % "Kill %d/50 Bats" % player_data["bats_killed"]
-		task2.text = "2) %s" % "Collect %d/100 ExP" % player_data["exp"]
+		task2.text = "2) %s" % "Collect %d/250 ExP" % player_data["exp"]
 	else:
 		no_tasks()
