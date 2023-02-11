@@ -21,7 +21,9 @@ func interract():
 	elif phase == 2:
 		if not task_asked:
 			MessageBox.send_message("Can you do the following: 1) Kill 50 Bats, 2) Collect 100 ExP")
-			DataManager.ModifyData.aiden_data(2, true)
+		else:
+			MessageBox.send_message("Please complete the Tasks!!")
+		DataManager.ModifyData.aiden_data(2, true)
 
 func _on_Area2D_body_entered(_body):
 	can_interract = true
