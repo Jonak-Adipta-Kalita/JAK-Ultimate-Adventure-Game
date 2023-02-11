@@ -81,9 +81,10 @@ class ModifyData:
 
 		DataManager.modify_data("player", new_data)
 	
-	static func aiden_data(phase: int):
+	static func aiden_data(phase: int, task_asked: bool = false):
 		DataManager.modify_data("aiden", {
-			"phase": phase
+			"phase": phase,
+			"task_asked": task_asked
 		})
 
 func _ready():

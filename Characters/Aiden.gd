@@ -3,16 +3,25 @@ extends KinematicBody2D
 var can_interract = false
 
 func interract():
-	if not "aiden" in DataManager.get_data():
-		DataManager.ModifyData.aiden_data(1)
+	if MessageBox.showing_text:
+		MessageBox.send_message("Hide")
+		return
 
-	var phase: int = DataManager.get_data()["aiden"]["phase"]
+	if not "aiden" in DataManager.get_data():
+		DataManager.ModifyData.aiden_data(1, false)
+
+	var aiden_data = DataManager.get_data()["aiden"]
+
+	var phase: int = aiden_data["phase"]
+	var task_asked: bool = aiden_data["task_asked"]
 
 	if phase == 1:
 		MessageBox.send_message("Hello %s, I am Aiden, I will be your partner in this Adventure." %  DataManager.get_data()["name"])
-		DataManager.ModifyData.aiden_data(2)
+		DataManager.ModifyData.aiden_data(2, false)
 	elif phase == 2:
-		MessageBox.send_message("Can you do the following: 1) Kill 50 Bats, 2) Collect 100 ExP")
+		if not task_asked:
+			MessageBox.send_message("Can you do the following: 1) Kill 50 Bats, 2) Collect 100 ExP")
+			DataManager.ModifyData.aiden_data(2, true)
 
 func _on_Area2D_body_entered(_body):
 	can_interract = true
