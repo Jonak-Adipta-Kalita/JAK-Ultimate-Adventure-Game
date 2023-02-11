@@ -3,6 +3,9 @@ extends CanvasLayer
 onready var task1 = $Tasks/Task1
 onready var task2 = $Tasks/Task2
 
+onready var doneTask1 = $TaskDone/DoneTask1
+onready var doneTask2 = $TaskDone/DoneTask2
+
 var can_be_viewed = false
 
 func no_tasks():
@@ -20,6 +23,21 @@ func _process(_delta):
 	var aiden_data = DataManager.get_data()["aiden"]
 
 	if aiden_data["phase"] == 2 and aiden_data["task_asked"] == true:
+		doneTask1.visible = false
+		doneTask2.visible = false
+		if player_data["bats_killed"] == 50:
+			doneTask1.visible = true
+		if player_data["exp"] == 100.0:
+			doneTask1.visible = true
+		
+		if player_data["bats_killed"] >= 50 and player_data["exp"] >= 100.0:
+			doneTask1.visible = false
+			doneTask2.visible = false
+			task1.text = "Go back to Aiden!!"
+			task2.text = ""
+
+			return
+
 		task1.text = "1) %s" % "Kill %d/50 Bats" % player_data["bats_killed"]
 		task2.text = "2) %s" % "Collect %d/100 ExP" % player_data["exp"]
 	else:

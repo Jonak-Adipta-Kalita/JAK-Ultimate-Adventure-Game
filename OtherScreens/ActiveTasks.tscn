@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://OtherScreens/ActiveTasks.gd" type="Script" id=1]
 [ext_resource path="res://Fonts/Arial.TTF" type="DynamicFontData" id=2]
+[ext_resource path="res://UI/Tick.png" type="Texture" id=3]
 
 [sub_resource type="DynamicFont" id=1]
 size = 6
@@ -39,3 +40,17 @@ margin_top = 23.0
 margin_right = 320.0
 margin_bottom = 39.0
 custom_fonts/normal_font = SubResource( 1 )
+
+[node name="TaskDone" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="DoneTask1" type="Sprite" parent="TaskDone"]
+position = Vector2( 232, 17 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 3 )
+
+[node name="DoneTask2" type="Sprite" parent="TaskDone"]
+position = Vector2( 232, 28 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 3 )
