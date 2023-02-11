@@ -21,16 +21,21 @@ func interract():
 		DataManager.ModifyData.aiden_data(2, false)
 	elif phase == 2:
 		if not task_asked:
-			MessageBox.send_message("Can you do the following: 1) Kill 50 Bats, 2) Collect 100 ExP")
-			DataManager.ModifyData.aiden_data(2, true)
+			MessageBox.send_message("Can you do the following: 1) Kill 50 Bats, 2) Collect 250 ExP")
+			DataManager.ModifyData.aiden_data(phase, true)
 		elif player_data["bats_killed"] >= 50 and player_data["exp"] >= 100.0:
 			MessageBox.send_message("Well Done!! You have completed your First Quest!!")
 			DataManager.ModifyData.aiden_data(3, false)
 		else:
 			MessageBox.send_message("Please complete the Tasks!!")
-			DataManager.ModifyData.aiden_data(2, true)
+			DataManager.ModifyData.aiden_data(phase, true)
 	elif phase == 3:
-		pass
+		if not task_asked:
+			MessageBox.send_message("Can you do the following: 1) Kill 100 Bats, 2) Collect 500 ExP")
+			DataManager.ModifyData.aiden_data(3, true)
+		else:
+			MessageBox.send_message("Please complete the Tasks!!")
+			DataManager.ModifyData.aiden_data(phase, true)
 
 func _on_Area2D_body_entered(_body):
 	can_interract = true
