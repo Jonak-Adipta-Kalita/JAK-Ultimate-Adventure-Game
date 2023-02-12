@@ -61,10 +61,10 @@ pathToInterrior = "res://Buildings/Interriors/LabInterrior/GroundFloor.tscn"
 [node name="Camera" parent="StopOnPause/GreenHaven" instance=ExtResource( 4 )]
 
 [node name="TopLeft" parent="StopOnPause/GreenHaven/Camera/Limits" index="0"]
-position = Vector2( -136, -288 )
+position = Vector2( -144, -483 )
 
 [node name="BottomRight" parent="StopOnPause/GreenHaven/Camera/Limits" index="1"]
-position = Vector2( 744, 584 )
+position = Vector2( 1293, 578 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
