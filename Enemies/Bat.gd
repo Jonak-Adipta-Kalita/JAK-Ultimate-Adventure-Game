@@ -88,7 +88,8 @@ func _on_Stats_no_health():
 
 	DataManager.ModifyData.player_collection_data(
 		player_collection_data["bats_killed"] + 1,
-		player_collection_data["exp"] + ExP
+		player_collection_data["exp"] + ExP,
+		player_collection_data["crystals_collected"]
 	)
 
 	queue_free()
