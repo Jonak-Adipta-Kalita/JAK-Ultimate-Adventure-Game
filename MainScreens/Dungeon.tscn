@@ -1,16 +1,22 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://World/GrassBackground.png" type="Texture" id=1]
 [ext_resource path="res://World/Tree.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Tiles/DirtTile.tscn" type="PackedScene" id=3]
 
-[node name="Dungeon" type="Node2D"]
+[node name="Dungeon" type="YSort"]
 
 [node name="Background" type="Sprite" parent="."]
-position = Vector2( 269.65, 80 )
+position = Vector2( 269, 63 )
 scale = Vector2( 1.12363, 1 )
+z_index = -2
 texture = ExtResource( 1 )
 region_enabled = true
-region_rect = Rect2( -250, -580, 480, 740 )
+region_rect = Rect2( -250, -580, 480, 1040 )
+
+[node name="DirtTile" parent="." instance=ExtResource( 3 )]
+z_index = -1
+tile_data = PoolIntArray( -196608, 0, 0, -196607, 0, 2, -131072, 0, 65536, -131071, 0, 65538, -65536, 0, 131072, -65535, 0, 131074 )
 
 [node name="YSort" type="YSort" parent="."]
 
