@@ -27,9 +27,10 @@ func _process(_delta):
 	if aiden_data["phase"] == 2 and aiden_data["task_asked"] == true:
 		doneTask1.visible = false
 		doneTask2.visible = false
-		if player_collection_data["bats_killed"] == 50:
+
+		if player_collection_data["bats_killed"] >= 50:
 			doneTask1.visible = true
-		if player_collection_data["exp"] == 250:
+		if player_collection_data["exp"] >= 250:
 			doneTask1.visible = true
 		
 		if player_collection_data["bats_killed"] >= 50 and player_collection_data["exp"] >= 250:
@@ -45,8 +46,21 @@ func _process(_delta):
 	elif aiden_data["phase"] == 2 and aiden_data["task_asked"] == true:
 		doneTask1.visible = false
 		doneTask2.visible = false
-		# check for completion
-		task1.text = "1) %s" % "Collect %d/50 Crystals" % player_collection_data["crystals_collected"]
+
+		if player_collection_data["crystals_collected"] >= 100:
+			doneTask1.visible = true
+		if player_collection_data["exp"] >= 500:
+			doneTask2.visible = true
+
+		if player_collection_data["crystals_collected"] >= 100 and player_collection_data["exp"] >= 500:
+			doneTask1.visible = false
+			doneTask2.visible = false
+			task1.text = "Go back to Aiden!!"
+			task2.text = ""
+
+			return
+
+		task1.text = "1) %s" % "Collect %d/100 Crystals" % player_collection_data["crystals_collected"]
 		task2.text = "2) %s" % "Collect %d/500 ExP" % player_collection_data["exp"]
 	else:
 		no_tasks()
