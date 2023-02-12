@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Tiles/CliffTile.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Tiles/WaterTile.tscn" type="PackedScene" id=2]
@@ -9,6 +9,10 @@
 [ext_resource path="res://World/Tree.tscn" type="PackedScene" id=7]
 [ext_resource path="res://World/Grass.tscn" type="PackedScene" id=8]
 [ext_resource path="res://World/Bush.tscn" type="PackedScene" id=9]
+[ext_resource path="res://MainScreens/Dungeon.tscn" type="PackedScene" id=10]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 4, 7.5 )
 
 [node name="GreenHaven" type="Node2D"]
 
@@ -988,6 +992,9 @@ position = Vector2( -128, 24 )
 [node name="Tree175" parent="YSort/Trees" instance=ExtResource( 7 )]
 position = Vector2( 736, 0 )
 
+[node name="Tree540" parent="YSort/Trees" instance=ExtResource( 7 )]
+position = Vector2( -156, -22 )
+
 [node name="Tree176" parent="YSort/Trees" instance=ExtResource( 7 )]
 position = Vector2( 736, -32 )
 
@@ -1538,7 +1545,7 @@ position = Vector2( 704, -416 )
 position = Vector2( 672, -416 )
 
 [node name="Tree494" parent="YSort/Trees" instance=ExtResource( 7 )]
-position = Vector2( 640, -416 )
+position = Vector2( 640, -440 )
 
 [node name="Tree495" parent="YSort/Trees" instance=ExtResource( 7 )]
 position = Vector2( 736, -392 )
@@ -1791,3 +1798,14 @@ position = Vector2( 608, 48 )
 
 [node name="Tree58" parent="YSort/Trees" instance=ExtResource( 7 )]
 position = Vector2( 608, 24 )
+
+[node name="DungeonGate" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 256
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DungeonGate"]
+position = Vector2( 748, -24.5 )
+shape = SubResource( 1 )
+
+[node name="Dungeon" parent="." instance=ExtResource( 10 )]
+position = Vector2( 753, -24 )
