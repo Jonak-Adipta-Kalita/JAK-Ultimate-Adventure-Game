@@ -51,8 +51,6 @@ class ModifyData:
 		facing: Vector2 = Vector2.DOWN,
 		health: int = PlayerStats.max_health,
 		location: String = "overworld",
-		bats_killed: int = 0,
-		_exp: float = 0,
 		buildingexterior_global_pos: Vector2 = Vector2.ZERO,
 		_floor = "GroundFloor"
 	):
@@ -64,8 +62,6 @@ class ModifyData:
 				"facing": var2str(facing),
 				"location": location,
 				"health": health,
-				"bats_killed": bats_killed,
-				"exp": _exp,
 				"buildingexterior_global_pos": var2str(buildingexterior_global_pos),
 				"floor": _floor
 			}
@@ -74,12 +70,23 @@ class ModifyData:
 				"global_position": var2str(global_pos),
 				"facing": var2str(facing),
 				"location": location,
-				"health": health,
-				"bats_killed": bats_killed,
-				"exp": _exp,
+				"health": health
 			}
 
 		DataManager.modify_data("player", new_data)
+
+	static func player_collection_data(
+		bats_killed: int = 0,
+		_exp: float = 0,
+		crystals_collected: int = 0
+	):
+		var player_collection_data = {
+			"bats_killed": bats_killed,
+			"exp": _exp,
+			"crystals_collected": crystals_collected
+		}
+
+		DataManager.modify_data("player_collection", player_collection_data)
 	
 	static func aiden_data(phase: int, task_asked: bool = false):
 		DataManager.modify_data("aiden", {

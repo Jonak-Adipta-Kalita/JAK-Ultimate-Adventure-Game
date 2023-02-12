@@ -9,8 +9,6 @@ func modify_player_data(facing=Vector2.UP):
 		facing,
 		PlayerStats.health,
 		"buildinginterrior-" + name.split("_")[0],
-		current_data["player"]["bats_killed"],
-		current_data["player"]["exp"],
 		str2var(current_data["player"]["buildingexterior_global_pos"]),
 		name.split("_")[1]
 	)

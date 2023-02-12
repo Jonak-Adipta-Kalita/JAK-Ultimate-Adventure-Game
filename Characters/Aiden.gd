@@ -7,11 +7,11 @@ func interract():
 		MessageBox.send_message("Hide")
 		return
 
-	if not "aiden" in DataManager.get_data():
+	if not DataManager.exists_data("aiden"):
 		DataManager.ModifyData.aiden_data(1, false)
 
 	var aiden_data = DataManager.get_data()["aiden"]
-	var player_data = DataManager.get_data()["player"]
+	var player_collection_data = DataManager.get_data()["player_collection"]
 
 	var phase: int = aiden_data["phase"]
 	var task_asked: bool = aiden_data["task_asked"]
@@ -23,7 +23,7 @@ func interract():
 		if not task_asked:
 			MessageBox.send_message("Can you do the following: 1) Kill 50 Bats, 2) Collect 250 ExP")
 			DataManager.ModifyData.aiden_data(phase, true)
-		elif player_data["bats_killed"] >= 50 and player_data["exp"] >= 100.0:
+		elif player_collection_data["bats_killed"] >= 50 and player_collection_data["exp"] >= 100.0:
 			MessageBox.send_message("Well Done!! You have completed your First Quest!!")
 			DataManager.ModifyData.aiden_data(3, false)
 		else:
@@ -31,7 +31,7 @@ func interract():
 			DataManager.ModifyData.aiden_data(phase, true)
 	elif phase == 3:
 		if not task_asked:
-			MessageBox.send_message("Can you do the following: 1) Kill 100 Bats, 2) Collect 500 ExP")
+			MessageBox.send_message("Can you do the following: 1) Collect 50 Crystals, 2) Collect 500 ExP")
 			DataManager.ModifyData.aiden_data(3, true)
 		else:
 			MessageBox.send_message("Please complete the Tasks!!")

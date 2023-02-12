@@ -85,28 +85,12 @@ func _on_HurtBox_area_entered(area):
 	hurtbox.create_hit_effect()
 
 func _on_Stats_no_health():
-	var player_data = DataManager.get_data()["player"]
+	var player_collection_data = DataManager.get_data()["player_collection"]
 
-	if "buildingexterior_global_pos" in Array(player_data.keys()):
-		DataManager.ModifyData.player_data(
-			str2var(player_data["global_position"]),
-			str2var(player_data["facing"]),
-			PlayerStats.max_health,
-			player_data["location"],
-			player_data["bats_killed"] + 1,
-			player_data["exp"] + ExP,
-			str2var(player_data["buildingexterior_global_pos"]),
-			player_data["floor"]
-		)
-	else:
-		DataManager.ModifyData.player_data(
-			str2var(player_data["global_position"]),
-			str2var(player_data["facing"]),
-			PlayerStats.max_health,
-			player_data["location"],
-			player_data["bats_killed"] + 1,
-			player_data["exp"] + ExP
-		)
+	DataManager.ModifyData.player_collection_data(
+		player_collection_data["bats_killed"] + 1,
+		player_collection_data["exp"] + ExP
+	)
 
 	queue_free()
 

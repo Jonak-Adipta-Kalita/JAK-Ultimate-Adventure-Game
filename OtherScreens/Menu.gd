@@ -6,7 +6,7 @@ func _ready():
 
 func _on_PlayButton_pressed():
 	var data = DataManager.get_data()
-	var location: String = data["player"]["location"] if "player" in Array(DataManager.get_data().keys()) else "overworld"
+	var location: String = data["player"]["location"] if DataManager.exists_data("player") else "overworld"
 	var change_scene_to = ""
 
 	if location == "overworld":

@@ -13,6 +13,9 @@ func _ready():
 
 	if not DataManager.exists_data("player"):
 		DataManager.ModifyData.player_data()
+	
+	if not DataManager.exists_data("player_collection"):
+		DataManager.ModifyData.player_collection_data()
 
 	if "buildingexterior_global_pos" in Array(DataManager.get_data()["player"].keys()):
 		player.global_position = str2var(DataManager.get_data()["player"]["buildingexterior_global_pos"])
@@ -33,19 +36,13 @@ func _process(_delta):
 			DataManager.ModifyData.player_data(
 				player.global_position,
 				player.animationTree.get("parameters/Idle/blend_position"),
-				PlayerStats.health,
-				"overworld",
-				current_data["player"]["bats_killed"],
-				current_data["player"]["exp"]
+				PlayerStats.health
 			)
 		else:
 			DataManager.ModifyData.player_data(
 				str2var(current_data["player"]["global_position"]),
 				str2var(current_data["player"]["facing"]),
-				PlayerStats.health,
-				"overworld",
-				current_data["player"]["bats_killed"],
-				current_data["player"]["exp"]
+				PlayerStats.health
 			)
 	if get_tree().paused:
 		canvasLayer.visible = false
