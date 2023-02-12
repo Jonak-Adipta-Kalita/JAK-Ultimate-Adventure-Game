@@ -6,10 +6,3 @@ func _ready():
 
 func _on_animation_finished():
 	queue_free()
-
-	print("boom")
-
-	var crystal = preload("res://Consumable/Crystal.tscn").instance()
-	get_parent().add_child(crystal)
-
-	crystal.global_position = global_position
