@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://World/GrassBackground.png" type="Texture" id=1]
 [ext_resource path="res://World/Tree.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://MainScreens/Dungeon.gd" type="Script" id=4]
 [ext_resource path="res://Buildings/Interriors/Objects/SmallTable.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Buildings/Interriors/Objects/Computer.tscn" type="PackedScene" id=6]
+[ext_resource path="res://InteractableItems/Chest.tscn" type="PackedScene" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 1.92308, 10 )
@@ -1020,6 +1021,41 @@ position = Vector2( 524, 456 )
 
 [node name="Tree731" parent="YSort/Trees" instance=ExtResource( 2 )]
 position = Vector2( 524, 440 )
+
+[node name="Chests" type="YSort" parent="YSort"]
+
+[node name="Chest" parent="YSort/Chests" instance=ExtResource( 7 )]
+position = Vector2( 56, -256 )
+
+[node name="Chest2" parent="YSort/Chests" instance=ExtResource( 7 )]
+position = Vector2( 440, -256 )
+
+[node name="Chest3" parent="YSort/Chests" instance=ExtResource( 7 )]
+position = Vector2( 448, 0 )
+
+[node name="Chest4" parent="YSort/Chests" instance=ExtResource( 7 )]
+position = Vector2( 256, -136 )
+
+[node name="Chest10" parent="YSort/Chests" instance=ExtResource( 7 )]
+position = Vector2( 448, -136 )
+
+[node name="Chest11" parent="YSort/Chests" instance=ExtResource( 7 )]
+position = Vector2( 56, -136 )
+
+[node name="Chest5" parent="YSort/Chests" instance=ExtResource( 7 )]
+position = Vector2( 256, 184 )
+
+[node name="Chest6" parent="YSort/Chests" instance=ExtResource( 7 )]
+position = Vector2( 56, 344 )
+
+[node name="Chest7" parent="YSort/Chests" instance=ExtResource( 7 )]
+position = Vector2( 440, 344 )
+
+[node name="Chest8" parent="YSort/Chests" instance=ExtResource( 7 )]
+position = Vector2( 448, 184 )
+
+[node name="Chest9" parent="YSort/Chests" instance=ExtResource( 7 )]
+position = Vector2( 64, 184 )
 
 [node name="SmallTable" parent="YSort" instance=ExtResource( 5 )]
 position = Vector2( 61, -28 )
