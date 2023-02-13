@@ -1023,14 +1023,15 @@ position = Vector2( 524, 440 )
 
 [node name="SmallTable" parent="YSort" instance=ExtResource( 5 )]
 position = Vector2( 61, -28 )
+collision_mask = 65
 
 [node name="Computer" parent="YSort/SmallTable" instance=ExtResource( 6 )]
 position = Vector2( -3.84615, -7.6923 )
 scale = Vector2( 1.30769, 1.30769 )
 
-[node name="Area" type="Area2D" parent="YSort/SmallTable"]
+[node name="ComputerInterractable" type="Area2D" parent="YSort/SmallTable"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/SmallTable/Area"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/SmallTable/ComputerInterractable"]
 position = Vector2( -18.4615, -3.07692 )
 shape = SubResource( 1 )
 
@@ -1041,3 +1042,6 @@ position = Vector2( 109, -246 )
 
 [node name="BottomRight" type="Position2D" parent="Position"]
 position = Vector2( 461, 367 )
+
+[connection signal="body_entered" from="YSort/SmallTable/ComputerInterractable" to="." method="_on_ComputerInterractable_body_entered"]
+[connection signal="body_exited" from="YSort/SmallTable/ComputerInterractable" to="." method="_on_ComputerInterractable_body_exited"]
