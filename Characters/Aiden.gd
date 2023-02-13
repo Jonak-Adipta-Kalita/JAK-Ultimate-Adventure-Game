@@ -33,6 +33,9 @@ func interract():
 		if not task_asked:
 			MessageBox.send_message("Can you do the following: 1) Collect 50 Crystals, 2) Collect 500 ExP")
 			DataManager.ModifyData.aiden_data(3, true)
+		elif player_collection_data["crystals_collected"] >= 100 and player_collection_data["exp"] >= 500:
+			MessageBox.send_message("Well Done!! You have completed your Second Quest!!")
+			DataManager.ModifyData.aiden_data(4, false)
 		else:
 			MessageBox.send_message("Please complete the Tasks!!")
 			DataManager.ModifyData.aiden_data(phase, true)

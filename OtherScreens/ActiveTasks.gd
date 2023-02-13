@@ -43,7 +43,7 @@ func _process(_delta):
 
 		task1.text = "1) %s" % "Kill %d/50 Bats" % player_collection_data["bats_killed"]
 		task2.text = "2) %s" % "Collect %d/250 ExP" % player_collection_data["exp"]
-	elif aiden_data["phase"] == 2 and aiden_data["task_asked"] == true:
+	elif aiden_data["phase"] == 3 and aiden_data["task_asked"] == true:
 		doneTask1.visible = false
 		doneTask2.visible = false
 
