@@ -1,9 +1,14 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://World/GrassBackground.png" type="Texture" id=1]
 [ext_resource path="res://World/Tree.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Tiles/DirtTile.tscn" type="PackedScene" id=3]
 [ext_resource path="res://MainScreens/Dungeon.gd" type="Script" id=4]
+[ext_resource path="res://Buildings/Interriors/Objects/SmallTable.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Buildings/Interriors/Objects/Computer.tscn" type="PackedScene" id=6]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 1.92308, 10 )
 
 [node name="Dungeon" type="YSort"]
 script = ExtResource( 4 )
@@ -1016,10 +1021,23 @@ position = Vector2( 524, 456 )
 [node name="Tree731" parent="YSort/Trees" instance=ExtResource( 2 )]
 position = Vector2( 524, 440 )
 
+[node name="SmallTable" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( 61, -28 )
+
+[node name="Computer" parent="YSort/SmallTable" instance=ExtResource( 6 )]
+position = Vector2( -3.84615, -7.6923 )
+scale = Vector2( 1.30769, 1.30769 )
+
+[node name="Area" type="Area2D" parent="YSort/SmallTable"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/SmallTable/Area"]
+position = Vector2( -18.4615, -3.07692 )
+shape = SubResource( 1 )
+
 [node name="Position" type="Node2D" parent="."]
 
 [node name="TopLeft" type="Position2D" parent="Position"]
-position = Vector2( 61, -246 )
+position = Vector2( 109, -246 )
 
 [node name="BottomRight" type="Position2D" parent="Position"]
-position = Vector2( 461, 353 )
+position = Vector2( 461, 367 )
