@@ -6,7 +6,6 @@ onready var bottomRight = $Position/BottomRight.position
 onready var topLeft = $Position/TopLeft.position
 
 var can_interract = false
-var counter = 1
 
 func _ready():
 	randomize()
@@ -15,8 +14,6 @@ func _ready():
 		spawn()
 
 func spawn():
-	counter += 1
-	print("boom", counter)
 	var size = bottomRight - topLeft
 	var random_x = topLeft.x + size.x * randf()
 	var random_y = topLeft.y + size.y * randf()
@@ -33,4 +30,5 @@ func _on_ComputerInterractable_body_exited(_body):
 
 func _process(_delta):
 	if can_interract and Input.is_action_just_pressed("ui_select"):
-		spawn()
+		for _i in range(50):
+			spawn()
