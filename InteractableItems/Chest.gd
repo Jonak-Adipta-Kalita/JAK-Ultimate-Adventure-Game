@@ -2,14 +2,15 @@ extends StaticBody2D
 
 onready var animationPlayer = $AnimationPlayer
 onready var droppedItem = $DroppedItem
+onready var timer = $Timer
 
-var item_to_drop = preload("res://Consumable/Mushroom.tscn").instance()
 
 var can_interract = false
 var is_open = false
 var dropped = false
 
 func drop_item():
+	var item_to_drop = preload("res://Consumable/Mushroom.tscn").instance()
 	droppedItem.add_child(item_to_drop)
 
 func _on_Area2D_body_entered(_body):
@@ -34,3 +35,8 @@ func _on_AnimationPlayer_animation_finished(anim_name: String):
 	if not dropped and anim_name == "ChestOpen":
 		drop_item()
 		dropped = true
+		timer.start(60)
+
+func _on_Timer_timeout():
+	dropped = false
+	timer.stop()

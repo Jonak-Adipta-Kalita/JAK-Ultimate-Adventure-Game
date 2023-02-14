@@ -28,17 +28,17 @@ margin_right = 40.0
 margin_bottom = 40.0
 
 [node name="Task1" type="RichTextLabel" parent="Tasks"]
-margin_left = 237.0
+margin_left = 222.0
 margin_top = 13.0
 margin_right = 320.0
 margin_bottom = 29.0
 custom_fonts/normal_font = SubResource( 1 )
 
 [node name="Task2" type="RichTextLabel" parent="Tasks"]
-margin_left = 237.0
-margin_top = 23.0
+margin_left = 222.0
+margin_top = 26.0
 margin_right = 320.0
-margin_bottom = 39.0
+margin_bottom = 42.0
 custom_fonts/normal_font = SubResource( 1 )
 
 [node name="TaskDone" type="Control" parent="."]
@@ -46,11 +46,11 @@ margin_right = 40.0
 margin_bottom = 40.0
 
 [node name="DoneTask1" type="Sprite" parent="TaskDone"]
-position = Vector2( 232, 17 )
+position = Vector2( 215, 18 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 3 )
 
 [node name="DoneTask2" type="Sprite" parent="TaskDone"]
-position = Vector2( 232, 28 )
+position = Vector2( 215, 31 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 3 )
