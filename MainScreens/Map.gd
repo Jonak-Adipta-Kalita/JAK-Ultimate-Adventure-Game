@@ -32,7 +32,6 @@ func _ready():
 func _process(_delta):
 	if DataManager.updated_data and not DataManager.is_updating_ext_g_pos:
 		var current_data = DataManager.get_data()
-		print(PlayerStats.health)
 		DataManager.ModifyData.player_data(
 			player.global_position if PlayerStats.health != 0 else str2var(current_data["player"]["global_position"]),
 			player.animationTree.get("parameters/Idle/blend_position") if PlayerStats.health != 0 else str2var(current_data["player"]["facing"]),
