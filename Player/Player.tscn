@@ -854,15 +854,16 @@ margin_right = 157.0
 margin_bottom = 19.0
 
 [node name="MobileControls" type="Node2D" parent="UI"]
+z_index = 2
 
 [node name="Analog" parent="UI/MobileControls" instance=ExtResource( 9 )]
 position = Vector2( 48, 152 )
 
 [node name="KillButton" type="TextureButton" parent="UI/MobileControls"]
-margin_left = 208.0
-margin_top = 136.0
-margin_right = 433.0
-margin_bottom = 361.0
+margin_left = 286.0
+margin_top = 142.0
+margin_right = 511.0
+margin_bottom = 367.0
 rect_scale = Vector2( 0.1, 0.1 )
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource( 11 )
