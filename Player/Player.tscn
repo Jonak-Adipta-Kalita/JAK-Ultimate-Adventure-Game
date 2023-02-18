@@ -845,6 +845,7 @@ shape = SubResource( 50 )
 stream = ExtResource( 7 )
 
 [node name="UI" type="CanvasLayer" parent="."]
+layer = 2
 
 [node name="HealthUI" parent="UI" instance=ExtResource( 10 )]
 margin_left = 8.0
@@ -852,10 +853,12 @@ margin_top = 8.0
 margin_right = 157.0
 margin_bottom = 19.0
 
-[node name="Analog" parent="UI" instance=ExtResource( 9 )]
+[node name="MobileControls" type="Node2D" parent="UI"]
+
+[node name="Analog" parent="UI/MobileControls" instance=ExtResource( 9 )]
 position = Vector2( 48, 152 )
 
-[node name="KillButton" type="TextureButton" parent="UI"]
+[node name="KillButton" type="TextureButton" parent="UI/MobileControls"]
 margin_left = 208.0
 margin_top = 136.0
 margin_right = 433.0
@@ -864,11 +867,11 @@ rect_scale = Vector2( 0.1, 0.1 )
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource( 11 )
 
-[node name="KillButtonTimer" type="Timer" parent="UI/KillButton"]
+[node name="KillButtonTimer" type="Timer" parent="UI/MobileControls/KillButton"]
 
 [connection signal="area_entered" from="HurtBox" to="." method="_on_HurtBox_area_entered"]
-[connection signal="pressed" from="UI/KillButton" to="." method="_on_KillButton_pressed"]
-[connection signal="timeout" from="UI/KillButton/KillButtonTimer" to="." method="_on_KillButtonTimer_timeout"]
+[connection signal="pressed" from="UI/MobileControls/KillButton" to="." method="_on_KillButton_pressed"]
+[connection signal="timeout" from="UI/MobileControls/KillButton/KillButtonTimer" to="." method="_on_KillButtonTimer_timeout"]
 
 [editable path="HitBoxPivot/SwordHitBox"]
 [editable path="HurtBox"]

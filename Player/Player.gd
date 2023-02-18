@@ -25,7 +25,7 @@ onready var swordHitbox = $HitBoxPivot/SwordHitBox
 onready var hurtbox = $HurtBox
 onready var ui_ = $UI
 
-onready var killButtonTimer = $UI/KillButton/KillButtonTimer
+onready var killButtonTimer = $UI/MobileControls/KillButton/KillButtonTimer
 
 func _ready():
 	set_ui_visible(false)

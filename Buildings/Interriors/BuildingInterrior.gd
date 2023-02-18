@@ -20,6 +20,9 @@ func _ready():
 	DataManager.is_changing_floor = false
 	DataManager.is_updating_ext_g_pos = false
 
+	player.set_ui_visible(true)
+	player.showed_ui = true
+
 	while not "buildingexterior_global_pos" in Array(current_data["player"].keys()):
 		yield(get_tree().create_timer(0.1), "timeout")
 
@@ -38,6 +41,14 @@ func _ready():
 func _process(_delta):
 	if DataManager.updated_data and PlayerStats.health != 0:
 		modify_player_data(player.animationTree.get("parameters/Idle/blend_position"))
+
+	if not player.showed_ui:
+		return
+
+	if get_tree().paused:
+		player.set_ui_visible(false)
+	else:
+		player.set_ui_visible(true)
 
 func _on_Area2D_body_entered(_body):
 	SceneTransition.change_scene("res://MainScreens/Map.tscn")
