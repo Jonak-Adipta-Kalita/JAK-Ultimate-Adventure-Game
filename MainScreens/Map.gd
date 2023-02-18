@@ -6,6 +6,7 @@ onready var waitForDataLoad = $WaitForDataLoad
 onready var waitForDataLoadAnimPlayer = $WaitForDataLoad/AnimationPlayer
 
 func _ready():
+	player.set_ui_visible(false)
 	waitForDataLoad.visible = true
 	DataManager.inside_house = false
 	PauseMenu.can_pause = true
@@ -26,9 +27,19 @@ func _ready():
 	yield(waitForDataLoadAnimPlayer, "animation_finished")
 
 	waitForDataLoad.visible = false
+	player.set_ui_visible(true)
+	player.showed_ui = true
 	ActiveTasks.can_be_viewed = true
 
 func _process(_delta):
+	if not player.showed_ui:
+		return
+
+	if get_tree().paused:
+		player.set_ui_visible(false)
+	else:
+		player.set_ui_visible(true)
+
 	if DataManager.updated_data and not DataManager.is_updating_ext_g_pos:
 		var current_data = DataManager.get_data()
 		DataManager.ModifyData.player_data(

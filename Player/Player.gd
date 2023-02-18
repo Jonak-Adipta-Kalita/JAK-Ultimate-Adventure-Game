@@ -17,15 +17,17 @@ var velocity = Vector2.ZERO
 var state = MOVE
 var roll_vector
 var stats = PlayerStats
+var showed_ui = false
 
 onready var animationTree = $AnimationTree
 onready var animationState = animationTree.get("parameters/playback")
 onready var swordHitbox = $HitBoxPivot/SwordHitBox
 onready var hurtbox = $HurtBox
-onready var ui = $UI
+onready var ui_ = $UI
 onready var virtualJoystick = $UI/VirtualJoystick
 
 func _ready():
+	set_ui_visible(false)
 	var _player_stats_connect = stats.connect("no_health", self, "queue_free")
 
 	while (not DataManager.updated_data) and (not DataManager.exists_data("player")):
@@ -51,11 +53,6 @@ func _physics_process(delta):
 			roll_state(delta)
 		ATTACK:
 			attack_state(delta)
-
-	if get_tree().paused:
-		ui.visible = false
-	else:
-		ui.visible = true
 
 func move_state(delta):
 	if not DataManager.updated_data:
@@ -118,3 +115,6 @@ func _on_HurtBox_area_entered(area):
 
 	var playerHurtSound = PlayerHurtSound.instance()
 	get_tree().current_scene.add_child(playerHurtSound)
+
+func set_ui_visible(visible_: bool):
+	ui_.visible = visible_
