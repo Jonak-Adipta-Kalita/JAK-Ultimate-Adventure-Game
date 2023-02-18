@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/joystick_base_outline.png-0a23433b214daf1d27d35915ad9d478e.stex"
+path="res://.import/small_circle.png-3400163f1ea4e785b68ccb939a450cd4.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Joystick/Textures/joystick_base_outline.png"
-dest_files=[ "res://.import/joystick_base_outline.png-0a23433b214daf1d27d35915ad9d478e.stex" ]
+source_file="res://Joystick/Analog/small_circle.png"
+dest_files=[ "res://.import/small_circle.png-3400163f1ea4e785b68ccb939a450cd4.stex" ]
 
 [params]
 

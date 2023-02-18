@@ -103,11 +103,6 @@ _global_script_classes=[ {
 "class": "GEUtils",
 "language": "GDScript",
 "path": "res://addons/Godoxel/Util.gd"
-}, {
-"base": "Control",
-"class": "VirtualJoystick",
-"language": "GDScript",
-"path": "res://Joystick/VirtualJoystick.gd"
 } ]
 _global_script_class_icons={
 "BrushPrefabs": "",
@@ -128,8 +123,7 @@ _global_script_class_icons={
 "GEPencil": "",
 "GERainbow": "",
 "GERect": "",
-"GEUtils": "",
-"VirtualJoystick": ""
+"GEUtils": ""
 }
 
 [application]

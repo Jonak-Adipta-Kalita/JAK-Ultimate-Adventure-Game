@@ -24,7 +24,6 @@ onready var animationState = animationTree.get("parameters/playback")
 onready var swordHitbox = $HitBoxPivot/SwordHitBox
 onready var hurtbox = $HurtBox
 onready var ui_ = $UI
-onready var virtualJoystick = $UI/VirtualJoystick
 
 func _ready():
 	set_ui_visible(false)
@@ -60,11 +59,8 @@ func move_state(delta):
 
 	var input_vector = Vector2.ZERO
 
-	if virtualJoystick.is_pressed():
-		input_vector = virtualJoystick.get_output()
-	else:
-		input_vector.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
-		input_vector.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
+	input_vector.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
+	input_vector.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
 
 	input_vector = input_vector.normalized()
 
