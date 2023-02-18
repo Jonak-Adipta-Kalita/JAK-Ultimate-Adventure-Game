@@ -25,6 +25,8 @@ onready var swordHitbox = $HitBoxPivot/SwordHitBox
 onready var hurtbox = $HurtBox
 onready var ui_ = $UI
 
+onready var killButtonTimer = $UI/KillButton/KillButtonTimer
+
 func _ready():
 	set_ui_visible(false)
 	var _player_stats_connect = stats.connect("no_health", self, "queue_free")
@@ -114,3 +116,11 @@ func _on_HurtBox_area_entered(area):
 
 func set_ui_visible(visible_: bool):
 	ui_.visible = visible_
+
+func _on_KillButton_pressed():
+	Input.action_press("attack")
+	killButtonTimer.start(0.4)
+
+func _on_KillButtonTimer_timeout():
+	Input.action_release("attack")
+	killButtonTimer.stop()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=2]
+[gd_scene load_steps=60 format=2]
 
 [ext_resource path="res://Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Player/Player.png" type="Texture" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Music and Sounds/Evade.wav" type="AudioStream" id=8]
 [ext_resource path="res://Joystick/Analog/Analog.tscn" type="PackedScene" id=9]
 [ext_resource path="res://UI/HealthUI.tscn" type="PackedScene" id=10]
+[ext_resource path="res://UI/Sword.png" type="Texture" id=11]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 4.0
@@ -854,7 +855,20 @@ margin_bottom = 19.0
 [node name="Analog" parent="UI" instance=ExtResource( 9 )]
 position = Vector2( 48, 152 )
 
+[node name="KillButton" type="TextureButton" parent="UI"]
+margin_left = 208.0
+margin_top = 136.0
+margin_right = 433.0
+margin_bottom = 361.0
+rect_scale = Vector2( 0.1, 0.1 )
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 11 )
+
+[node name="KillButtonTimer" type="Timer" parent="UI/KillButton"]
+
 [connection signal="area_entered" from="HurtBox" to="." method="_on_HurtBox_area_entered"]
+[connection signal="pressed" from="UI/KillButton" to="." method="_on_KillButton_pressed"]
+[connection signal="timeout" from="UI/KillButton/KillButtonTimer" to="." method="_on_KillButtonTimer_timeout"]
 
 [editable path="HitBoxPivot/SwordHitBox"]
 [editable path="HurtBox"]
