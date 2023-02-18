@@ -1,8 +1,7 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://MainScreens/GreenHaven.tscn" type="PackedScene" id=1]
 [ext_resource path="res://MainScreens/Map.gd" type="Script" id=2]
-[ext_resource path="res://UI/HealthUI.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Overlap/Camera.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=6]
 
@@ -65,14 +64,6 @@ position = Vector2( -144, -483 )
 
 [node name="BottomRight" parent="StopOnPause/GreenHaven/Camera/Limits" index="1"]
 position = Vector2( 1293, 578 )
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="HealthUI" parent="CanvasLayer" instance=ExtResource( 3 )]
-margin_left = 8.0
-margin_top = 8.0
-margin_right = 157.0
-margin_bottom = 19.0
 
 [node name="WaitForDataLoad" type="CanvasLayer" parent="."]
 visible = false

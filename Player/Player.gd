@@ -22,6 +22,8 @@ onready var animationTree = $AnimationTree
 onready var animationState = animationTree.get("parameters/playback")
 onready var swordHitbox = $HitBoxPivot/SwordHitBox
 onready var hurtbox = $HurtBox
+onready var ui = $UI
+onready var virtualJoystick = $UI/VirtualJoystick
 
 func _ready():
 	var _player_stats_connect = stats.connect("no_health", self, "queue_free")
@@ -50,14 +52,22 @@ func _physics_process(delta):
 		ATTACK:
 			attack_state(delta)
 
+	if get_tree().paused:
+		ui.visible = false
+	else:
+		ui.visible = true
+
 func move_state(delta):
 	if not DataManager.updated_data:
 		return
 
 	var input_vector = Vector2.ZERO
 
-	input_vector.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
-	input_vector.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
+	if virtualJoystick.is_pressed():
+		input_vector = virtualJoystick.get_output()
+	else:
+		input_vector.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
+		input_vector.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
 
 	input_vector = input_vector.normalized()
 

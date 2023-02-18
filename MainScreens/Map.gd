@@ -1,6 +1,5 @@
 extends Node2D
 
-onready var canvasLayer = $CanvasLayer
 onready var stopOnPause = $StopOnPause
 onready var player = $StopOnPause/GreenHaven/YSort/Player
 onready var waitForDataLoad = $WaitForDataLoad
@@ -37,7 +36,3 @@ func _process(_delta):
 			player.animationTree.get("parameters/Idle/blend_position") if PlayerStats.health != 0 else str2var(current_data["player"]["facing"]),
 			PlayerStats.health
 		)
-	if get_tree().paused:
-		canvasLayer.visible = false
-	else:
-		canvasLayer.visible = true
