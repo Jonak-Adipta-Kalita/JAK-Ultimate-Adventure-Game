@@ -24,18 +24,10 @@ onready var animationState = animationTree.get("parameters/playback")
 onready var swordHitbox = $HitBoxPivot/SwordHitBox
 onready var hurtbox = $HurtBox
 onready var ui_ = $UI
-onready var mobileControls = $UI/MobileControls
-
-onready var killButton = $UI/MobileControls/KillButton
-onready var rollButton = $UI/MobileControls/RollButton
-onready var interractButton = $UI/MobileControls/InterractButton
 
 func _ready():
-	if not (OS.get_name() in ["Android", "iOS"]):
-		mobileControls.visible = false
-		killButton.disabled = true
-		rollButton.disabled = true
-		interractButton.disabled = true
+	if OS.get_name() in ["Android", "iOS"]:
+		ui_.add_child(preload("res://Overlap/MobileControls.tscn").instance())
 
 	var _player_stats_connect = stats.connect("no_health", self, "queue_free")
 
@@ -130,18 +122,3 @@ func _on_HurtBox_area_entered(area):
 
 func set_ui_visible(visible_: bool):
 	ui_.visible = visible_
-
-func _on_KillButton_pressed():
-	Input.action_press("attack")
-	yield(get_tree().create_timer(0.1), "timeout")
-	Input.action_release("attack")
-
-func _on_RollButton_pressed():
-	Input.action_press("roll")
-	yield(get_tree().create_timer(0.1), "timeout")
-	Input.action_release("roll")
-
-func _on_InterractButton_pressed():
-	Input.action_press("ui_select")
-	yield(get_tree().create_timer(0.1), "timeout")
-	Input.action_release("ui_select")
