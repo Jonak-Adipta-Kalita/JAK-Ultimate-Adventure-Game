@@ -25,6 +25,7 @@ onready var swordHitbox = $HitBoxPivot/SwordHitBox
 onready var hurtbox = $HurtBox
 onready var ui_ = $UI
 onready var killButtonTimer = $UI/MobileControls/KillButton/KillButtonTimer
+onready var rollButtonTimer = $UI/MobileControls/RollButton/RollButtonTimer
 
 func _ready():
 	var _player_stats_connect = stats.connect("no_health", self, "queue_free")
@@ -128,3 +129,11 @@ func _on_KillButton_pressed():
 func _on_KillButtonTimer_timeout():
 	Input.action_release("attack")
 	killButtonTimer.stop()
+
+func _on_RollButton_pressed():
+	   Input.action_press("roll")
+	   rollButtonTimer.start(0.5)
+
+func _on_RollButtonTimer_timeout():
+	   Input.action_release("attack")
+	   rollButtonTimer.stop()
