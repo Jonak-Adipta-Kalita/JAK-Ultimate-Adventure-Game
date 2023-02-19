@@ -28,10 +28,13 @@ position = Vector2( 159, 166 )
 position = Vector2( 271, 72 )
 rotation = 1.5708
 
-[node name="Window" parent="YSort" index="0" instance=ExtResource( 14 )]
+[node name="Player" parent="YSort" index="0"]
+position = Vector2( 160, 154.875 )
+
+[node name="Window" parent="YSort" index="1" instance=ExtResource( 14 )]
 position = Vector2( 160, 24 )
 
-[node name="BigTable" parent="YSort" index="1" instance=ExtResource( 4 )]
+[node name="BigTable" parent="YSort" index="2" instance=ExtResource( 4 )]
 position = Vector2( 81, 106 )
 
 [node name="Chairs" type="YSort" parent="YSort" index="3"]
@@ -60,6 +63,7 @@ frame = 3
 position = Vector2( 0.2, 2.5 )
 
 [node name="Candles" parent="YSort" index="4" instance=ExtResource( 12 )]
+visible = false
 position = Vector2( 81, 98 )
 z_index = 1
 
@@ -86,9 +90,6 @@ position = Vector2( 249, 131 )
 
 [node name="FlowerPot" parent="YSort/SmallTable2" index="2" instance=ExtResource( 8 )]
 position = Vector2( -176.154, 20 )
-
-[node name="Player" parent="YSort" index="11"]
-position = Vector2( 160, 154.875 )
 
 [connection signal="go_up" from="YSort/StairUp" to="." method="_on_StairUp_go_up"]
 

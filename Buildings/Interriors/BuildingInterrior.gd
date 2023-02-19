@@ -20,9 +20,6 @@ func _ready():
 	DataManager.is_changing_floor = false
 	DataManager.is_updating_ext_g_pos = false
 
-	player.set_ui_visible(true)
-	player.showed_ui = true
-
 	while not "buildingexterior_global_pos" in Array(current_data["player"].keys()):
 		yield(get_tree().create_timer(0.1), "timeout")
 

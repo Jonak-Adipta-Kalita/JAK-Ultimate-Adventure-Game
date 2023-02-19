@@ -24,11 +24,9 @@ onready var animationState = animationTree.get("parameters/playback")
 onready var swordHitbox = $HitBoxPivot/SwordHitBox
 onready var hurtbox = $HurtBox
 onready var ui_ = $UI
-
 onready var killButtonTimer = $UI/MobileControls/KillButton/KillButtonTimer
 
 func _ready():
-	set_ui_visible(false)
 	var _player_stats_connect = stats.connect("no_health", self, "queue_free")
 
 	while (not DataManager.updated_data) and (not DataManager.exists_data("player")):
@@ -54,6 +52,12 @@ func _physics_process(delta):
 			roll_state(delta)
 		ATTACK:
 			attack_state(delta)
+
+	if DataManager.get_data()["player"]["location"] == "overworld":
+		set_ui_visible(false)
+		return
+	
+	set_ui_visible(true)
 
 func move_state(delta):
 	if not DataManager.updated_data:
