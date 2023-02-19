@@ -24,8 +24,6 @@ onready var animationState = animationTree.get("parameters/playback")
 onready var swordHitbox = $HitBoxPivot/SwordHitBox
 onready var hurtbox = $HurtBox
 onready var ui_ = $UI
-onready var killButtonTimer = $UI/MobileControls/KillButton/KillButtonTimer
-onready var rollButtonTimer = $UI/MobileControls/RollButton/RollButtonTimer
 
 func _ready():
 	var _player_stats_connect = stats.connect("no_health", self, "queue_free")
@@ -84,11 +82,15 @@ func move_state(delta):
 		animationState.travel("Idle")
 		velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
 	
-	if Input.is_action_just_pressed("attack"):
+	if Input.is_action_pressed("attack"):
 		state = ATTACK
-	
-	if Input.is_action_just_pressed("roll"):
+	else:
+		state = MOVE
+
+	if Input.is_action_pressed("roll"):
 		state = ROLL
+	else:
+		state = MOVE
 
 	move()
 
@@ -124,16 +126,10 @@ func set_ui_visible(visible_: bool):
 
 func _on_KillButton_pressed():
 	Input.action_press("attack")
-	killButtonTimer.start(0.4)
-
-func _on_KillButtonTimer_timeout():
+	yield(get_tree().create_timer(0.1), "timeout")
 	Input.action_release("attack")
-	killButtonTimer.stop()
 
 func _on_RollButton_pressed():
-	   Input.action_press("roll")
-	   rollButtonTimer.start(0.5)
-
-func _on_RollButtonTimer_timeout():
-	   Input.action_release("attack")
-	   rollButtonTimer.stop()
+	Input.action_press("roll")
+	yield(get_tree().create_timer(0.1), "timeout")
+	Input.action_release("roll")

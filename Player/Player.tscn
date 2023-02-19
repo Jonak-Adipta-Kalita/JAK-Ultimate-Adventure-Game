@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=2]
+[gd_scene load_steps=61 format=2]
 
 [ext_resource path="res://Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Player/Player.png" type="Texture" id=2]
@@ -870,8 +870,6 @@ mouse_default_cursor_shape = 2
 texture_normal = ExtResource( 11 )
 expand = true
 
-[node name="KillButtonTimer" type="Timer" parent="UI/MobileControls/KillButton"]
-
 [node name="RollButton" type="TextureButton" parent="UI/MobileControls"]
 margin_left = 257.0
 margin_top = 143.0
@@ -881,14 +879,9 @@ mouse_default_cursor_shape = 2
 texture_normal = ExtResource( 12 )
 expand = true
 
-[node name="RollButtonTimer" type="Timer" parent="UI/MobileControls/RollButton"]
-
 [connection signal="area_entered" from="HurtBox" to="." method="_on_HurtBox_area_entered"]
 [connection signal="pressed" from="UI/MobileControls/KillButton" to="." method="_on_KillButton_pressed"]
-[connection signal="timeout" from="UI/MobileControls/KillButton/KillButtonTimer" to="." method="_on_KillButtonTimer_timeout"]
-
 [connection signal="pressed" from="UI/MobileControls/RollButton" to="." method="_on_RollButton_pressed"]
-[connection signal="timeout" from="UI/MobileControls/RollButton/RollButtonTimer" to="." method="_on_RollButtonTimer_timeout"]
 
 [editable path="HitBoxPivot/SwordHitBox"]
 [editable path="HurtBox"]
