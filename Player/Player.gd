@@ -84,13 +84,9 @@ func move_state(delta):
 	
 	if Input.is_action_pressed("attack"):
 		state = ATTACK
-	else:
-		state = MOVE
 
 	if Input.is_action_pressed("roll"):
 		state = ROLL
-	else:
-		state = MOVE
 
 	move()
 
