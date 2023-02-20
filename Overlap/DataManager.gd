@@ -1,6 +1,6 @@
 extends Node2D
 
-var file_path = "Data.json"
+var file_path = "user://Data.json" if OS.get_name() in ["Android", "iOS"] else "Data.json"
 
 var updated_data = false
 var is_updating_ext_g_pos = false
