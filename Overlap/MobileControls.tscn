@@ -49,8 +49,3 @@ margin_bottom = 144.0
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource( 3 )
 expand = true
-
-[connection signal="pressed" from="PauseButton" to="." method="_on_PauseButton_pressed"]
-[connection signal="pressed" from="KillButton" to="." method="_on_KillButton_pressed"]
-[connection signal="pressed" from="RollButton" to="." method="_on_RollButton_pressed"]
-[connection signal="pressed" from="InterractButton" to="." method="_on_InterractButton_pressed"]
