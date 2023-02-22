@@ -92,3 +92,9 @@ anims/alpha_in = SubResource( 1 )
 anims/alpha_out = SubResource( 2 )
 anims/ball_center = SubResource( 3 )
 anims/default = SubResource( 4 )
+
+[node name="TopLeft" type="Position2D" parent="."]
+position = Vector2( 0, 200 )
+
+[node name="BottomRight" type="Position2D" parent="."]
+position = Vector2( 800, 900 )

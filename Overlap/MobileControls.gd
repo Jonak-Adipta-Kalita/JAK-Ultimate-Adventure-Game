@@ -28,4 +28,4 @@ func _input(event):
 	Input.action_release(action)
 
 func is_in_rect(pos: Vector2, rect: Rect2):
-	return pos.x > rect.position.x and pos.y > rect.position.y and pos.x < rect.end.x and pos.y < rect.end.y
+	return pos.x >= rect.position.x and pos.y >= rect.position.y and pos.x <= rect.end.x and pos.y <= rect.end.y

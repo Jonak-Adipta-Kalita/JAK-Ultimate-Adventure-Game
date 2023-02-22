@@ -8,6 +8,8 @@ export var mapAnalogToDpad = true
 onready var ball = $ball
 onready var animation_player = $AnimationPlayer
 onready var halfSize = $bg.texture.get_size()/2
+onready var topLeft = $TopLeft.position
+onready var bottomRight = $BottomRight.position
 
 var centerPoint = Vector2(0,0)
 var currentForce = Vector2(0,0)
@@ -28,7 +30,6 @@ func get_force():
 	return currentForce
 	
 func _input(event):
-	
 	var incomingPointer = extractPointerIdx(event)
 	if incomingPointer == INACTIVE_IDX:
 		return
@@ -47,10 +48,12 @@ func need2ChangeActivePointer(event): #touch down inside analog
 		if AnalogTapToShow:
 			return AnalogTapToShowContainer.get_global_rect().has_point(Vector2(event.position.x, event.position.y))
 		else:
-			var length = (global_position - Vector2(event.position.x, event.position.y)).length_squared();
-			return length < squaredHalfSizeLength
-	else:
-		return false
+			var touchPos = Vector2(event.position.x, event.position.y)
+			if true:
+				var length = (global_position - touchPos).length_squared()
+				return length < squaredHalfSizeLength
+
+	return false
 
 func isActive():
 	return currentPointerIDX != INACTIVE_IDX
