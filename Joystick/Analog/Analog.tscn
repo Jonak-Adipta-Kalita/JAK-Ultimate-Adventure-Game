@@ -93,8 +93,19 @@ anims/alpha_out = SubResource( 2 )
 anims/ball_center = SubResource( 3 )
 anims/default = SubResource( 4 )
 
-[node name="TopLeft" type="Position2D" parent="."]
-position = Vector2( 0, 200 )
+[node name="Positions" type="Node" parent="."]
 
-[node name="BottomRight" type="Position2D" parent="."]
-position = Vector2( 800, 900 )
+[node name="TopLeft" type="Position2D" parent="Positions"]
+position = Vector2( 0, 80 )
+
+[node name="TopRight" type="Position2D" parent="Positions"]
+position = Vector2( 150, 80 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="BottomLeft" type="Position2D" parent="Positions"]
+position = Vector2( 0, 180 )
+scale = Vector2( 0.0016, 0.0016 )
+
+[node name="BottomRight" type="Position2D" parent="Positions"]
+position = Vector2( 150, 180 )
+scale = Vector2( 0.04, 0.04 )

@@ -8,15 +8,18 @@ export var mapAnalogToDpad = true
 onready var ball = $ball
 onready var animation_player = $AnimationPlayer
 onready var halfSize = $bg.texture.get_size()/2
-onready var topLeft = $TopLeft.position
-onready var bottomRight = $BottomRight.position
+onready var topLeft = $Positions/TopLeft.position
+onready var topRight = $Positions/TopRight.position
+onready var bottomLeft = $Positions/BottomLeft.position
+onready var bottomRight = $Positions/BottomRight.position
+
+onready var touchableRect = Rect2(topLeft, bottomRight - topLeft)
 
 var centerPoint = Vector2(0,0)
 var currentForce = Vector2(0,0)
 var ballPos = Vector2()
 var squaredHalfSizeLength = 0
 var currentPointerIDX = INACTIVE_IDX;
-
 
 func _ready():
 	if AnalogTapToShowContainer == "":
@@ -49,7 +52,7 @@ func need2ChangeActivePointer(event): #touch down inside analog
 			return AnalogTapToShowContainer.get_global_rect().has_point(Vector2(event.position.x, event.position.y))
 		else:
 			var touchPos = Vector2(event.position.x, event.position.y)
-			if true:
+			if is_in_rect(event.position, touchableRect):
 				var length = (global_position - touchPos).length_squared()
 				return length < squaredHalfSizeLength
 
@@ -160,3 +163,6 @@ func map_analog_dpad():
 		Input.action_press("ui_up")
 	else:
 		Input.action_release("ui_up")
+
+func is_in_rect(pos: Vector2, rect: Rect2):
+	return pos.x >= rect.position.x and pos.y >= rect.position.y and pos.x <= rect.end.x and pos.y <= rect.end.y
