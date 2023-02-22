@@ -26,7 +26,7 @@ onready var hurtbox = $HurtBox
 onready var ui_ = $UI
 
 func _ready():
-	if OS.get_name() in ["Android", "iOS", "Windows"]:
+	if OS.get_name() in ["Android", "iOS"]:
 		ui_.add_child(preload("res://Overlap/MobileControls.tscn").instance())
 
 	var _player_stats_connect = stats.connect("no_health", self, "queue_free")
