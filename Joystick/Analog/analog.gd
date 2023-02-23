@@ -78,11 +78,10 @@ func process_input(event):
 	if isActive() and (event.device == currentPointerIDX):
 		calculateForce(event.position.x - global_position.x, event.position.y - global_position.y)
 		updateBallPos()
-	
-	var isReleased = isReleased(event)
-	if isReleased:
-		reset()
 
+		var isReleased = isReleased(event)
+		if isReleased:
+			reset()
 
 func reset():
 	currentPointerIDX = INACTIVE_IDX
