@@ -24,10 +24,15 @@ onready var animationState = animationTree.get("parameters/playback")
 onready var swordHitbox = $HitBoxPivot/SwordHitBox
 onready var hurtbox = $HurtBox
 onready var ui_ = $UI
+onready var healthUI = $UI/HealthUI
 
 func _ready():
 	if OS.get_name() in ["Android", "iOS"]:
 		ui_.add_child(preload("res://Overlap/MobileControls.tscn").instance())
+		healthUI.margin_left = 41
+		healthUI.margin_top = 3
+		healthUI.margin_right = 190
+		healthUI.margin_bottom = 14
 
 	var _player_stats_connect = stats.connect("no_health", self, "queue_free")
 

@@ -846,9 +846,9 @@ stream = ExtResource( 7 )
 layer = 2
 
 [node name="HealthUI" parent="UI" instance=ExtResource( 10 )]
-margin_left = 41.0
+margin_left = 3.0
 margin_top = 3.0
-margin_right = 190.0
+margin_right = 152.0
 margin_bottom = 14.0
 
 [connection signal="area_entered" from="HurtBox" to="." method="_on_HurtBox_area_entered"]

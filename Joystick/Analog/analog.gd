@@ -75,8 +75,9 @@ func extractPointerIdx(event):
 		return INACTIVE_IDX
 		
 func process_input(event):
-	calculateForce(event.position.x - global_position.x, event.position.y - global_position.y)
-	updateBallPos()
+	if isActive() and (event.device == currentPointerIDX):
+		calculateForce(event.position.x - global_position.x, event.position.y - global_position.y)
+		updateBallPos()
 	
 	var isReleased = isReleased(event)
 	if isReleased:
