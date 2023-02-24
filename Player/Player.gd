@@ -27,7 +27,7 @@ onready var ui_ = $UI
 onready var healthUI = $UI/HealthUI
 
 func _ready():
-	if OS.get_name() in ["Android", "iOS"]:
+	if OS.get_name() in ["Android", "iOS", "Windows"]:
 		ui_.add_child(preload("res://Overlap/MobileControls.tscn").instance())
 		healthUI.margin_left = 41
 		healthUI.margin_top = 3

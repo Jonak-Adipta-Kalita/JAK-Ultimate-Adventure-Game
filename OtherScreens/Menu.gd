@@ -18,3 +18,6 @@ func _on_PlayButton_pressed():
 
 func _on_CreditsButton_pressed():
 	var _change_scene_error = get_tree().change_scene("res://OtherScreens/Credits.tscn")
+
+func _on_ExitButton_pressed():
+	get_tree().quit()

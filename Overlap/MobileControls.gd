@@ -1,5 +1,6 @@
 extends Node2D
 
+onready var analog = $Analog
 onready var pauseButton = $PauseButton
 onready var killButton = $KillButton
 onready var rollButton = $RollButton
