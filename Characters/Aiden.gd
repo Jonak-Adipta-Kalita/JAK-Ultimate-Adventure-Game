@@ -23,7 +23,7 @@ func interract():
 		if not task_asked:
 			MessageBox.send_message("Can you do the following: 1) Kill 50 Bats, 2) Collect 250 ExP")
 			DataManager.ModifyData.aiden_data(phase, true)
-		elif player_collection_data["bats_killed"] >= 50 and player_collection_data["exp"] >= 100.0:
+		elif player_collection_data["bats_killed"] >= 50 and player_collection_data["exp"] >= 250.0:
 			MessageBox.send_message("Well Done!! You have completed your First Quest!!")
 			DataManager.ModifyData.aiden_data(3, false)
 		else:
@@ -31,7 +31,7 @@ func interract():
 			DataManager.ModifyData.aiden_data(phase, true)
 	elif phase == 3:
 		if not task_asked:
-			MessageBox.send_message("Can you do the following: 1) Collect 50 Crystals, 2) Collect 500 ExP")
+			MessageBox.send_message("Can you do the following: 1) Collect 100 Crystals, 2) Collect 500 ExP")
 			DataManager.ModifyData.aiden_data(3, true)
 		elif player_collection_data["crystals_collected"] >= 100 and player_collection_data["exp"] >= 500:
 			MessageBox.send_message("Well Done!! You have completed your Second Quest!!")

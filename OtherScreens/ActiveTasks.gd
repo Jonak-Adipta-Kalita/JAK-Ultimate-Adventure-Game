@@ -33,7 +33,7 @@ func _process(_delta):
 		if player_collection_data["exp"] >= 250:
 			doneTask1.visible = true
 		
-		if player_collection_data["bats_killed"] >= 50 and player_collection_data["exp"] >= 250:
+		if player_collection_data["bats_killed"] >= 50 and player_collection_data["exp"] >= 250.0:
 			doneTask1.visible = false
 			doneTask2.visible = false
 			task1.text = "Go back to Aiden!!"
