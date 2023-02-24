@@ -18,13 +18,13 @@ func toggle_visibility(to_do: bool):
 
 func send_message(message: String):
 	if not showing_text:
-		if OS.get_name() in ["Android", "iOS", "Windows"]:
+		if OS.get_name() in ["Android", "iOS"]:
 			toggle_visibility(false)
 		visible = true
 		label.text = message
 		showing_text = true
 	else:
-		if OS.get_name() in ["Android", "iOS", "Windows"]:
+		if OS.get_name() in ["Android", "iOS"]:
 			toggle_visibility(true)
 		showing_text = false
 		label.text = ""
