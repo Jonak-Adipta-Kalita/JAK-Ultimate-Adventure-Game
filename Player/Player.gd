@@ -63,7 +63,7 @@ func _physics_process(delta):
 	if DataManager.get_data()["player"]["location"] == "overworld":
 		set_ui_visible(false)
 		return
-	
+
 	set_ui_visible(true)
 
 func move_state(delta):
