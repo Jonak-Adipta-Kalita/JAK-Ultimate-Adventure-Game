@@ -1,7 +1,6 @@
 extends "res://Overlap/Stats.gd"
 
 onready var noHealthTimer = $NoHealthTimer
-var counter = 0
 
 func _on_PlayerStats_no_health():
 	noHealthTimer.start(3)

@@ -31,14 +31,11 @@ func _ready():
 	player.showed_ui = true
 	ActiveTasks.can_be_viewed = true
 
-func _process(_delta):
-	if not player.showed_ui:
-		return
+	PlayerStats.invincible = false
 
-	if get_tree().paused:
-		player.set_ui_visible(false)
-	else:
-		player.set_ui_visible(true)
+func _process(_delta):
+	if PlayerStats.health <= 0:
+		return
 
 	if DataManager.updated_data and not DataManager.is_updating_ext_g_pos:
 		var current_data = DataManager.get_data()
@@ -47,3 +44,11 @@ func _process(_delta):
 			player.animationTree.get("parameters/Idle/blend_position") if PlayerStats.health != 0 else str2var(current_data["player"]["facing"]),
 			PlayerStats.health
 		)
+
+	if not player.showed_ui:
+		return
+
+	if get_tree().paused:
+		player.set_ui_visible(false)
+	else:
+		player.set_ui_visible(true)

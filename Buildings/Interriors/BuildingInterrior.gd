@@ -36,7 +36,15 @@ func _ready():
 	DataManager.updated_data = true
 	player.showed_ui = true
 
+	PlayerStats.invincible = false
+
 func _process(_delta):
+	if PlayerStats.health <= 0:
+		return
+
+	if DataManager.updated_data and PlayerStats.health != 0:
+		modify_player_data(player.animationTree.get("parameters/Idle/blend_position"))
+
 	if not player.showed_ui:
 		return
 
@@ -45,8 +53,6 @@ func _process(_delta):
 	else:
 		player.set_ui_visible(true)
 
-	if DataManager.updated_data and PlayerStats.health != 0:
-		modify_player_data(player.animationTree.get("parameters/Idle/blend_position"))
 
 func _on_Area2D_body_entered(_body):
 	SceneTransition.change_scene("res://MainScreens/Map.tscn")

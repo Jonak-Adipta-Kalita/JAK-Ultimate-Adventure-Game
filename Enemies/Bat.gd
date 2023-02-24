@@ -25,6 +25,7 @@ onready var softCollision = $SoftCollision
 onready var wanderController = $WanderController
 
 func _ready():
+	stats.invincible = false
 	state = pick_random_state([IDLE, WANDER])
 
 func _physics_process(delta):
