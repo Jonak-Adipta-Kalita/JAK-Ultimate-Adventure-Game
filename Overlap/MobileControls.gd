@@ -20,7 +20,7 @@ func _input(event):
 		action = "attack"
 	elif is_in_rect(event.position, rollButton.get_rect()):
 		action = "roll"
-	elif is_in_rect(event.position, rollButton.get_rect()):
+	elif is_in_rect(event.position, interractButton.get_rect()):
 		action = "ui_select"
 
 	Input.action_press(action)

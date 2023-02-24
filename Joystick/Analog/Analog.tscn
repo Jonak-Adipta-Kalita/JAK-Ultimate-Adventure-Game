@@ -99,7 +99,7 @@ anims/default = SubResource( 4 )
 position = Vector2( 0, 80 )
 
 [node name="TopRight" type="Position2D" parent="Positions"]
-position = Vector2( 150, 80 )
+position = Vector2( 108, 80 )
 scale = Vector2( 0.2, 0.2 )
 
 [node name="BottomLeft" type="Position2D" parent="Positions"]
@@ -107,5 +107,5 @@ position = Vector2( 0, 180 )
 scale = Vector2( 0.0016, 0.0016 )
 
 [node name="BottomRight" type="Position2D" parent="Positions"]
-position = Vector2( 150, 180 )
+position = Vector2( 108, 180 )
 scale = Vector2( 0.04, 0.04 )

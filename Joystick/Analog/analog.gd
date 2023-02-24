@@ -31,22 +31,26 @@ func _ready():
 
 func get_force():
 	return currentForce
-	
+
 func _input(event):
 	var incomingPointer = extractPointerIdx(event)
 	if incomingPointer == INACTIVE_IDX:
 		return
-	
+
+	if currentPointerIDX == incomingPointer:
+		process_input(event) 
+		return
+
 	if need2ChangeActivePointer(event):
 		if (currentPointerIDX != incomingPointer) and event.is_pressed():
 			currentPointerIDX = incomingPointer;
 			showAtPos(Vector2(event.position.x, event.position.y));
-
-	var theSamePointer = currentPointerIDX == incomingPointer
-	if isActive() and theSamePointer:
-		process_input(event)
+			return
 
 func need2ChangeActivePointer(event): #touch down inside analog	
+	if isActive():
+		return false
+
 	if event is InputEventMouseButton or event is InputEventScreenTouch:
 		if AnalogTapToShow:
 			return AnalogTapToShowContainer.get_global_rect().has_point(Vector2(event.position.x, event.position.y))
@@ -95,7 +99,7 @@ func showAtPos(pos):
 	if AnalogTapToShow:
 		animation_player.play("alpha_in", 0.2)
 		global_position = pos
-	
+
 func hide():
 	animation_player.play("alpha_out", 0.2) 
 

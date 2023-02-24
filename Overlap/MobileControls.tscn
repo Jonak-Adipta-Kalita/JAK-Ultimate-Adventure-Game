@@ -49,3 +49,5 @@ margin_bottom = 144.0
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource( 3 )
 expand = true
+
+[editable path="Analog"]
